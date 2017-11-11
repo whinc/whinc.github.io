@@ -116,7 +116,7 @@ function todoApp(state = {}, action) {
 function todos(state = [], action) {
   switch (action.type) {
   case 'ADD_TODO':
-    return {}state.concat([{ text: action.text, completed: false }]);
+    return state.concat([{ text: action.text, completed: false }]);
   case 'TOGGLE_TODO':
     return state.map((todo, index) =>
       action.index === index ?
@@ -203,14 +203,6 @@ redux 的核心 API 源码非常短（加上注释 250 左右），感兴趣可�
 reducer 是纯函数，意味着它并不直接修改 state，而是在 state 的副本上进行修改，并返回副本。同时，由于 reducer 是纯函数，所以 reducer 内部不能发起网络请求、不能修改外部变量等引起副作用的行为。
 
 之所以这么不遗余力的要保持 reducer 的纯函数特性，是为了保持 state 的变化只受 action 影响，不依赖于其他外部因素，让 state 的变化可预测。
-
-## redux 生态
-
-react-redux
-
-redux-actions
-
-redux middleware
 
 ## 参考
 
