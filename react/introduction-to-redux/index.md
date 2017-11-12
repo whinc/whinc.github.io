@@ -54,13 +54,15 @@ redux 本身非常简单，它只有三个核心概念：**state**、**action**�
 
 state 保存了应用程序当前状态，每当 state 发生变化时触发状态变化事件，事件的订阅者 View 拿到最新的 state 重新渲染 UI 以反映最新的 state 信息。
 
-action 表示一个操作（请求修改 state 的操作），它是一个纯 JavaScript 对象，其包含了操作的类型、数据和元数据信息。用户与 View 进行交互，例如点击按钮、输入信息或页面跳转等，每个操作都会触发一个 action，网络请求、定时任务或系统其他异步事件，也会触发 action。所有 action 都会被送到一个称为 reducer 的处理函数。
+action 表示一个操作（请求修改 state 的操作），它是一个纯 JavaScript 对象，其包含了操作的类型、数据和元数据信息。用户与 View 进行交互，例如点击按钮、输入信息或页面跳转等，每个操作都会触发一个 action，网络请求、定时任务或系统其他异步事件，也会触发 action。所有 action 都会被送到一个称为 reducer 的处理函数。
 
-reducer 是一个纯函数，其接受 state 和 action 作为输入，处理后返回一个新的 state，新的 state 会更新覆盖之前的 state 作为应用程序当前最新 state，并触发 state 变化事件。
+reducer 是一个纯函数，其接受 state 和 action 作为输入，处理后返回一个新的 state，新的 state 会更新覆盖之前的 state 作为应用程序当前最新 state，并触发 state 变化事件。
 
 上面就是 redux 核心思想：数据的流动是单向的，View 不直接操作 state，所有对 state 修改都通过发送 action 进行，action 统一由纯函数 reducer 进行处理，因此只有 reducer 能修改 state。redux 通过这些约束，让数据的变化变得可预测、可回溯。
 
 下面结合一个 TODOs demo 看看 redux 是如何工作的？
+
+![](./images/redux-todos-demo.png)
 
 **state**
 
@@ -149,7 +151,7 @@ function visibilityFilter(state = 'SHOW_ALL', action) {
 
 ## Redux API
 
-上面一节已经将 redux 的核心思想介绍完了，唯一缺失的部分是，如何连接各个部分：View 如何发送 action、action 如何传递给 reducer 处理，更新 state 后如何通知 View 更新。这部分可以基于事件的发布-订阅完成，实际上 redux 的 API 也确实是这样实现的。
+上面一节已经将 redux 的核心思想介绍完了，唯一缺失的部分是，如何连接各个部分：View 如何发送 action、action 如何传递给 reducer 处理，更新 state 后如何通知 View 更新。这部分可以基于事件的发布-订阅完成，实际上 redux 的 API 也确实是这样实现的。
 
 Redux 的 API 主要是提供了 Store，它的作用就是将这几个概念串联起来。Store 有以下职责：
 * 内部维持应用的 state 和 reducer；
@@ -182,7 +184,7 @@ redux 的核心 API 源码非常短（加上注释 250 左右），感兴趣可�
 
 ## Redux 三大原则
 
-使用 redux 应当始终遵循下面介绍的三个原则，这将会提高代码的可维护性、开发效率和其他方面的好处。下面的三大原则描述来自 redux 文档（我只是搬运工），略微进行简化。
+使用 redux 应当始终遵循下面介绍的三个原则，这将会提高代码的可维护性、开发效率和其他方面的好处。下面的三大原则描述来自 redux 文档（我只是搬运工），略微进行简化。
 
 **单一数据源**
 
@@ -194,15 +196,21 @@ redux 的核心 API 源码非常短（加上注释 250 左右），感兴趣可�
 
 唯一改变 state 的方法就是触发 action
 
-这样可以确保 View 的交互事件、网络请求等都不能直接修改 state，相反它们只能表达修改的意图，所有的修改都被集中化处理，且严格按照一个接一个的顺序执行，因此不用担心条件竞争导致的时序问题。
+这样可以确保 View 的交互事件、网络请求等都不能直接修改 state，相反它们只能表达修改的意图，所有的修改都被集中化处理，且严格按照一个接一个的顺序执行，因此不用担心条件竞争导致的时序问题。
 
-同时，由于 action 是一个纯 JavaScript 对象，打印出 action 就可以清晰的看到应用程序的状态变迁图，这对于调试和回溯非常方便。
+同时，由于 action 是一个纯 JavaScript 对象，打印出 action 就可以清晰的看到应用程序的状态变迁图，这对于调试和回溯非常方便。
 
 **reducer 是纯函数**
 
-reducer 是纯函数，意味着它并不直接修改 state，而是在 state 的副本上进行修改，并返回副本。同时，由于 reducer 是纯函数，所以 reducer 内部不能发起网络请求、不能修改外部变量等引起副作用的行为。
+reducer 是纯函数，意味着它并不直接修改 state，而是在 state 的副本上进行修改，并返回副本。同时，由于 reducer 是纯函数，所以 reducer 内部不能发起网络请求、不能修改外部变量等引起副作用的行为。
 
-之所以这么不遗余力的要保持 reducer 的纯函数特性，是为了保持 state 的变化只受 action 影响，不依赖于其他外部因素，让 state 的变化可预测。
+之所以这么不遗余力的要保持 reducer 的纯函数特性，是为了保持 state 的变化只受 action 影响，不依赖于其他外部因素，让 state 的变化可预测。
+
+## 示例 & 源码
+
+Online demo: <https://whinc.github.io/redux-todos-demo/>
+
+Github source code: <https://github.com/whinc/redux-todos-demo>
 
 ## 参考
 
