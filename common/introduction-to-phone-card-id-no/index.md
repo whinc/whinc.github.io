@@ -11,7 +11,7 @@
 ```
   /--MII      
 _/     /--IIN(BIN)
-      /     /--个人账户标识
+      /     /--个人账户标识，长度 6~12 位
 _____/ ____/ _/--校验位
 622576 8...8 8
 ```
@@ -44,7 +44,7 @@ _____/ ____/ _/--校验位
 |Visa|4|13,16,19|Luhn algorithm|
 |[more...](https://en.wikipedia.org/wiki/Payment_card_number#Issuer_identification_number_.28IIN.29)|.|.|.|
     
-**第 7~X 位(长度可变，最多12位)**
+**第 7~X 位(长度可变，6~12位)**
 除去卡号前 6 位和最后 1 位，中间数字表示个人账号标识，中间数字由发行机构自定义，由6-12位数字组成。每个银行的个人账号标识规则有所不同。有的银行在这部分内容中会包含分行、支行、储蓄网点等代码信息。有得银行可能就没有这么详细，会使用自然流水顺序码。
 
 **最后 1 位**
@@ -75,13 +75,21 @@ function luhnCheck(input) {
 }
 ```
 
-运行在线示例：<https://runkit.com/whinc/luhn-check-algorithm>
+上面的校验算法仅校验卡号是否符合规则，实际应用还需要根据具体场景校验卡号的开头位和长度等，下面是一个银联卡号的校验函数：
+```javascript
+// return true if input is a valid bank card no, otherwise return false
+function checkBankCardNo (input) {
+    return /^62(\d{14}|\d{17})$/.test(input) && luhnCheck(input)
+}
+```
+
+上面两段代码的在线示例：<https://runkit.com/whinc/luhn-check-algorithm>
 
 参考：
 
-* [银行卡号各个数字是什么含义？](https://www.zhihu.com/question/20880750#answer-4771564)
-* [Luhn algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm)
-* [Payment card number](https://en.wikipedia.org/wiki/Payment_card_number)
+* [Payment card number | wikipedia](https://en.wikipedia.org/wiki/Payment_card_number)
+* [Luhn algorithm | wikipedia](https://en.wikipedia.org/wiki/Luhn_algorithm)
+* [银行卡号各个数字是什么含义？ | 知乎](https://www.zhihu.com/question/20880750#answer-4771564)
 
 # 身份证号（ID Card Number）
 
