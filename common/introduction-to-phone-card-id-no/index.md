@@ -14,14 +14,14 @@
 ```
   /--MII      
 _/     /--IIN(BIN)
-      /     /--个人账户标识，长度 6~12 位
+      /     /--个人账户标识，长度 6~12 位
 _____/ ____/ _/--校验位
 622576 8...8 8
 ```
 
 **第 1 位**
 
-卡号首位表示主要产业标识符([Major Industry Identifie, MII](https://en.wikipedia.org/wiki/ISO/IEC_7812))，由国际标准化组织于1989年首次发布，通过该值可以区分卡号的发行者所属行业，所有取值见下表：
+卡号首位表示主要产业标识符([Major Industry Identifie, MII](https://en.wikipedia.org/wiki/ISO/IEC_7812))，由国际标准化组织于1989年首次发布，通过该值可以区分卡号的发行者所属行业，所有取值见下表：
 
 |卡号首位|发行者类别|
 |-|-|
@@ -40,7 +40,7 @@ _____/ ____/ _/--校验位
 
 卡号前 6 位表示发行者标识代码([Issuer Identification Number, IIN](https://en.wikipedia.org/wiki/Payment_card_number#Issuer_identification_number_.28IIN.29))，也称位发卡行识别码(Bank Identification Number, BIN)，包含第 1 位产业标识符 MII，通过 IIN 可以区分卡号的发行机构。
 
-|发布网|IIN 范围|长度|校验算法|
+|发布网|IIN 范围|长度|校验算法|
 |-|-|-|-|
 |中国银联(China UnionPay)|62|16-19|Luhn algorithm|
 |美国运通(American Express)|34,37|15|Luhn algorithm|
@@ -56,7 +56,7 @@ _____/ ____/ _/--校验位
 
 ### 1.2 卡号校验
 
-卡号的最后一位都是通过[Luhn算法](https://en.wikipedia.org/wiki/Luhn_algorithm)进行计算或校验，校验算法的 JavaScript 实现如下：
+卡号的最后一位都是通过[Luhn算法](https://en.wikipedia.org/wiki/Luhn_algorithm)进行计算或校验，校验算法的 JavaScript 实现如下：
 
 ```javascript
 /**
@@ -141,7 +141,7 @@ EF 表示为县区代码（市辖区、郊区、郊县、县级市）。
 
 例如，广东省深圳市南山区，对应的身份证前 6 位是`440305`
 
-完整的全国省市区（县）代码可以参考中华人民共和国国家统计局[最新县及县以上行政区划代码（截止2016年7月31日）](http://www.stats.gov.cn/tjsj/tjbz/xzqhdm/201703/t20170310_1471429.html)。
+完整的全国省市区（县）代码可以参考中华人民共和国国家统计局[最新县及县以上行政区划代码（截止2016年7月31日）](http://www.stats.gov.cn/tjsj/tjbz/xzqhdm/201703/t20170310_1471429.html)。
 
 **出生日期**
 
