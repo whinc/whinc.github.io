@@ -238,7 +238,7 @@ function checkIDCardNo2 (input) {
 `CC`：国家码
 `MAC`：移动接入码，用于区分运营商
 `H0H1H2H3`：HLR(Home Location Register) 归属识别码，由运营商统一分配，每个移动运营商会为全国的地级市编上一个四位数代码，用于识别手机归属地
-`ABCD`：移动用户号，由各 HLR 自行分配，用于区分统一地区不同用户
+`ABCD`：移动用户号，由各 HLR 自行分配，用于区分同一地区不同用户
 
 ```
      /-CC
