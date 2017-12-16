@@ -58,7 +58,7 @@ _____/ ____/ _/--校验位
 
 ### 1.2 卡号校验
 
-卡号的最后一位都是通过[Luhn算法](https://en.wikipedia.org/wiki/Luhn_algorithm)进行计算或校验。luhn 算法也称为“mod 10”算法，它是一个简单的 checksum 算法。使用 luhn 算法校验的数字串，最后一位是校验位，使用 luhn 算法可校验数字串是否有效。
+卡号的最后一位都是通过[Luhn算法](https://en.wikipedia.org/wiki/Luhn_algorithm)进行计算或校验。luhn 算法也称为“mod 10”算法(源于算法最后一步操作是模10)，它是一个简单的 checksum 算法。使用 luhn 算法校验的数字串，最后一位是校验位，使用 luhn 算法可校验数字串是否有效。
 
 其具体算法步骤如下：
 1. 从待校验的数字串的最右侧（校验位）开始，向左遍历，奇数位数字累加，偶数位数字进行下面处理后的结果累加
@@ -69,7 +69,7 @@ _____/ ____/ _/--校验位
 
 |数字串|7|9|9|2|7|3|9|8|7|1|x|
 |-|-|-|-|-|-|-|-|-|-|-|-|
-|乘以2|7|<span style='color: red'>18</span>|9|<span style='color: red'>4</span>|7|<span style='color: red'>6</span>|9|<span style='color: red'>16</span>|7|<span style='color: red'>2</span>|x|
+|乘以2|7|**18**|9|**4**|7|**6**|9|**16**|7|**2**|x|
 |处理|7|9|9|4|7|6|9|7|7|2|x|
 
 luhn 校验算法的 JavaScript 实现如下：
