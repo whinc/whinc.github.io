@@ -1,8 +1,3 @@
-# gatsby-starter-blog
-Gatsby starter for creating a blog
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
-`gatsby new gatsby-blog https://github.com/gatsbyjs/gatsby-starter-blog`
+博客地址：<https://whinc.github.io/blog/>
 
-## Running in development
-`gatsby develop`
