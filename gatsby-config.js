@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Whinc Blog',
+    title: 'whinc\'s Blog',
     author: 'whincwu',
     description: "whinc's blog",
     siteUrl: 'https://whinc.github.io/blog/',
