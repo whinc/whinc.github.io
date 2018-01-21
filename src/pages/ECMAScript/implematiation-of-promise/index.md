@@ -1,4 +1,7 @@
-# 动手实现 Promise
+---
+title: 动手实现 Promise
+date: "2017-01-15"
+---
 
 ## 前言
 
