@@ -5,7 +5,7 @@
 
 ## 2018-03
 
-[计算机语言命名风格](https://github.com/whinc/blog/issues/7)
+[程序变量命名的几种叫法](https://github.com/whinc/blog/issues/7)
 
 ## 2017-12
 
