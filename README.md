@@ -20,3 +20,7 @@
 ## 2017-01
 
 [自己动手实现 ES6 Promise](https://github.com/whinc/blog/issues/2)
+
+## 资源
+
+[2017年全国省市区数据JSON](assets/region-2017.json)
