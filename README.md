@@ -3,6 +3,10 @@
 
 订阅请点 watch, 收藏请点 star
 
+## 2018-08
+
+[H5 实现保存图片的采坑记录](https://github.com/whinc/blog/issues/8)
+
 ## 2018-03
 
 [程序变量命名的几种叫法](https://github.com/whinc/blog/issues/7)
@@ -21,6 +25,6 @@
 
 [自己动手实现 ES6 Promise](https://github.com/whinc/blog/issues/2)
 
-## 资源
+## 共享资源
 
 [2017年全国省市区数据JSON](assets/region-2017.json)
