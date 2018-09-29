@@ -3,6 +3,10 @@
 
 订阅请点 watch, 收藏请点 star
 
+## 2018-09
+
+[H5 和小程序拍照图片旋转、压缩和上传](https://github.com/whinc/blog/issues/9)
+
 ## 2018-08
 
 [H5 实现保存图片的采坑记录](https://github.com/whinc/blog/issues/8)
