@@ -3,6 +3,10 @@
 
 订阅请点 watch, 收藏请点 star
 
+## 2018-12
+
+[Vue 生命周期梳理](https://github.com/whinc/blog/issues/11)
+
 ## 2018-11
 
 [CSS 属性值语法](https://github.com/whinc/blog/issues/10)
