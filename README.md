@@ -3,6 +3,10 @@
 
 订阅请点 watch, 收藏请点 star
 
+## 2019-07
+
+[Web 前端项目通用配置总结](https://github.com/whinc/blog/issues/14)
+
 ## 2019-05
 
 [前端路由原理解析和实现](https://github.com/whinc/blog/issues/13)
