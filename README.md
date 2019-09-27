@@ -5,7 +5,7 @@
 
 ## 2019-07
 
-[Web 前端项目通用配置总结](https://github.com/whinc/blog/issues/14)
+[JavaScript 项目通用配置清单](https://github.com/whinc/blog/issues/14)
 
 ## 2019-05
 
