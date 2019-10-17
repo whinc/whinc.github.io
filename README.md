@@ -55,9 +55,3 @@
 ## 共享资源
 
 - [2017年全国省市区数据JSON](assets/region-2017.json)
-
-## Github 博客推荐
-
-* [阿里云前端技术周刊](https://github.com/aliyunfe/weekly)（[aliyunfe](https://github.com/aliyunfe)）
-* [前端精读](https://github.com/dt-fe/weekly)（[dt-fe](https://github.com/dt-fe)）
-* [技术分享周刊](https://github.com/ruanyf/weekly)（[ruanyf](https://github.com/ruanyf)）
