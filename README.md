@@ -4,7 +4,7 @@
 
 ## 2019-10
 
-- [解构 constate](https://github.com/whinc/blog/issues/15)
+- [深入浅出 constate —— 基于 React Hooks & Context 的状态库](https://github.com/whinc/blog/issues/15)
 
 ## 2019-07
 
