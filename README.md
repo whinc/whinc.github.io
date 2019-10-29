@@ -4,11 +4,11 @@
 
 ## 2019-10
 
-- [深入浅出 constate —— 基于 React Hooks & Context 的状态库](https://github.com/whinc/blog/issues/15)
+- [constate 原理解析](https://github.com/whinc/blog/issues/15)
 
 ## 2019-07
 
-- [JavaScript 项目通用配置清单](https://github.com/whinc/blog/issues/14)
+- [JavaScript 项目中常见配置文件介绍](https://github.com/whinc/blog/issues/14)
 
 ## 2019-05
 
