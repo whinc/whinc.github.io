@@ -2,6 +2,10 @@
 
 订阅请点 watch, 收藏请点 star
 
+## 2019-11
+
+- [MobX 简明教程](https://github.com/whinc/blog/issues/16)
+
 ## 2019-10
 
 - [constate 原理解析](https://github.com/whinc/blog/issues/15)
