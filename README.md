@@ -12,7 +12,7 @@
 
 ## 2019-07
 
-- [JavaScript 项目中常见配置文件介绍](https://github.com/whinc/blog/issues/14)
+- [Web 前端项目必备配置](https://github.com/whinc/blog/issues/14)
 
 ## 2019-05
 
