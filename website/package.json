@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "blog",
   "private": true,
   "description": "A starter for a blog powered by Gatsby and Markdown",
   "version": "0.1.0",
@@ -39,6 +39,7 @@
   "devDependencies": {
     "dotenv": "^8.2.0",
     "gatsby-source-github-api": "^0.1.4",
+    "now": "^16.7.0",
     "prettier": "^1.19.1"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
@@ -58,6 +59,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "predeploy": "npm run clean && npm run build",
+    "deploy": "now --name blog ./public",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   }
 }

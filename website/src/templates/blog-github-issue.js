@@ -5,6 +5,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+import {formatDate} from "../utils/format"
 
 class BlogGithubIssueTemplate extends React.Component {
   render() {
@@ -13,7 +14,7 @@ class BlogGithubIssueTemplate extends React.Component {
       item => item.node.id === this.props.pageContext.id
     )
     if (!post) return null
-    const { title, lastEditedAt, bodyHTML } = post.node
+    const { title, createdAt, bodyHTML } = post.node
     // const { previous, next } = this.props.pageContext
 
     return (
@@ -39,7 +40,7 @@ class BlogGithubIssueTemplate extends React.Component {
                 marginBottom: rhythm(1),
               }}
             >
-              {lastEditedAt}
+              {formatDate(createdAt)}
             </p>
           </header>
           <section dangerouslySetInnerHTML={{ __html: bodyHTML }} />
@@ -102,7 +103,6 @@ export const pageQuery = graphql`
                 id
                 title
                 createdAt
-                lastEditedAt
                 bodyHTML
               }
             }

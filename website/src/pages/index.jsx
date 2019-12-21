@@ -5,8 +5,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
-import lightFormat from 'date-fns/lightFormat'
-import parseISO from 'date-fns/parseISO'
+import {formatDate} from '../utils/format'
 
 export default function BlogIndex({ data, location }) {
   const siteTitle = data.site.siteMetadata.title
@@ -16,7 +15,7 @@ export default function BlogIndex({ data, location }) {
       <SEO title="All posts" />
       <Bio />
       {posts.map(({ node }) => {
-        const { id, title, lastEditedAt, bodyText } = node
+        const { id, title, createdAt, bodyText } = node
         return (
           <article key={id}>
             <header>
@@ -29,7 +28,7 @@ export default function BlogIndex({ data, location }) {
                   {title}
                 </Link>
               </h3>
-              <small>{lightFormat(parseISO(lastEditedAt), 'yyyy年MM月dd日 hh:mm:ss')}</small>
+              <small>{formatDate(createdAt)}</small>
             </header>
             <section>
               <p>{bodyText.slice(0, 150)}...</p>
@@ -56,8 +55,8 @@ export const pageQuery = graphql`
               node {
                 id
                 title
+                createdAt
                 bodyText
-                lastEditedAt
               }
             }
           }
