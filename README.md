@@ -2,6 +2,10 @@
 
 订阅请点 watch, 收藏请点 star
 
+## 2020-04
+
+- [TypeScript 技巧集锦](https://github.com/whinc/blog/issues/20)
+
 ## 2020-02
 
 - [glob 模式匹配简明教程](https://github.com/whinc/blog/issues/18)
