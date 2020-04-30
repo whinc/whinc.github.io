@@ -28,3 +28,5 @@ jobs:
         cd ./website
         npm install
         npm run deploy
+      env:
+        MY_GITHUB_TOKEN: ${{secrets.MY_GITHUB_TOKEN}}
