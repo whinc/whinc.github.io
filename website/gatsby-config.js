@@ -18,7 +18,7 @@ module.exports = {
       resolve: `gatsby-source-github-api`,
       options: {
         // token: required by the GitHub API
-        token: process.env.GITHUB_TOKEN,
+        token: process.env.MY_GITHUB_TOKEN,
 
         // GraphQLquery: defaults to a search query
         graphQLQuery: `
