@@ -1,6 +1,8 @@
 ## whinc 的博客
 
-订阅请点 watch, 收藏请点 star
+订阅请点 watch, 收藏请点 star，关注公众号请扫码（或微信搜索公众号`whinc`）。
+
+![微信搜索公众号 whinc](./assets/qrcode_for_gh.jpg)
 
 ## 2020-04
 
