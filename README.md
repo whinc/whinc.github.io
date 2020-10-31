@@ -1,8 +1,13 @@
 ## whinc 的博客
 
-订阅请点 watch, 收藏请点 star，关注公众号请扫码（或微信搜索公众号`whinc`）。
+订阅请点 watch, 收藏请点 star，关注公众号请扫码（或微信搜索公众号`右耳朵猫`）。
 
-![微信搜索公众号 whinc](./assets/qrcode_for_gh.jpg)
+![微信搜索公众号 右耳朵猫](./assets/qrcode_for_gh.jpg)
+
+# 2020-10
+
+[C 语言 <limits.h> 头文件中 INT_MIN 奇怪定义的分析](https://github.com/whinc/notes/issues/16)
+
 
 ## 2020-04
 
