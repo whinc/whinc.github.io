@@ -6,7 +6,7 @@
 
 # 2020-10
 
-[C 语言 <limits.h> 头文件中 INT_MIN 奇怪定义的分析](https://github.com/whinc/notes/issues/16)
+- [C 语言 <limits.h> 头文件中 INT_MIN 奇怪定义的分析](https://github.com/whinc/notes/issues/16)
 
 
 ## 2020-04
