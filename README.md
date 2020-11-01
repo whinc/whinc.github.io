@@ -1,8 +1,8 @@
 ## whinc 的博客
 
-订阅请点 watch, 收藏请点 star，关注公众号请扫码（或微信搜索公众号`右耳朵猫`）。
+订阅请点 watch, 收藏请点 star，关注公众号请扫码（微信搜索公众号`右耳朵猫`）。
 
-![微信搜索公众号 右耳朵猫](./assets/qrcode_for_gh.jpg)
+![微信搜索公众号 右耳朵猫](https://cdn.jsdelivr.net/gh/whinc/blog/assets/qrcode_for_gh.jpg)
 
 # 2020-10
 
