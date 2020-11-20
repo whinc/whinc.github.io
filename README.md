@@ -1,8 +1,12 @@
 ## whinc 的博客
 
-订阅请点 watch, 收藏请点 star，关注公众号请扫码（微信搜索公众号`右耳朵猫`）。
+订阅请点 watch, 收藏请点 star，关注公众号请扫码（微信搜索公众号`右耳朵猫(whinc)`）。
 
 ![微信搜索公众号 右耳朵猫](https://cdn.jsdelivr.net/gh/whinc/blog/assets/qrcode_for_gh.jpg)
+
+# 2020-11
+
+- [快速定位生产环境 javascript 异常堆栈对应的源码位置](https://github.com/whinc/blog/issues/22)
 
 # 2020-10
 
