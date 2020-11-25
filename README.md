@@ -70,7 +70,7 @@
 
 - [10 分钟理解 Redux](https://github.com/whinc/blog/issues/5)
 
-- [React组件库主题设计](https://github.com/whinc/blog/issues/4)
+- [React UI 组件库换肤设计思路](https://github.com/whinc/blog/issues/4)
 
 ## 2017-01
 
