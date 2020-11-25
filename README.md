@@ -6,6 +6,7 @@
 
 # 2020-11
 
+- [自定义 hooks 实现读写 URL hash 路由参数](https://github.com/whinc/blog/issues/23)
 - [快速定位生产环境 javascript 异常堆栈对应的源码位置](https://github.com/whinc/blog/issues/22)
 
 # 2020-10
