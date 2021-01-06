@@ -1,8 +1,6 @@
 ## whinc 的博客
 
-订阅请点 watch, 收藏请点 star，关注公众号请扫码（微信搜索公众号`右耳朵猫(whinc)`）。
-
-![微信搜索公众号 右耳朵猫](https://cdn.jsdelivr.net/gh/whinc/blog/assets/qrcode_for_gh.jpg)
+订阅请点 watch, 收藏请点 star，关注公众号[右耳朵猫(whinc)](#公众号)。
 
 # 2020-11
 
@@ -79,3 +77,7 @@
 ## 共享资源
 
 - [2017年全国省市区数据JSON](assets/region-2017.json)
+
+## <a name='公众号'>公众号</
+
+![微信搜索公众号 右耳朵猫](https://cdn.jsdelivr.net/gh/whinc/blog/assets/qrcode_for_gh.jpg)
