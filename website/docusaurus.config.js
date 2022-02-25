@@ -6,9 +6,9 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "My Site",
+  title: "右耳朵猫(whincwu)的博客",
   tagline: "Dinosaurs are cool",
-  url: "https://your-docusaurus-test-site.com",
+  url: "https://whinc.github.io/blog",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
