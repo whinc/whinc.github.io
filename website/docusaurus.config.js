@@ -9,7 +9,7 @@ const config = {
   title: "右耳朵猫(whincwu)的博客",
   tagline: "Dinosaurs are cool",
   url: "https://whinc.github.io",
-  baseUrl: "/blog",
+  baseUrl: "/blog/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
