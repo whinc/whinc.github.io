@@ -6,8 +6,8 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "右耳朵猫(whincwu)的博客",
-  tagline: "Dinosaurs are cool",
+  title: "右耳朵猫(whinc)",
+  tagline: "分享技术，收获快乐",
   url: "https://whinc.github.io",
   baseUrl: "/blog/",
   onBrokenLinks: "throw",
@@ -15,6 +15,7 @@ const config = {
   favicon: "img/favicon.ico",
   organizationName: "whinc", // Usually your GitHub org/user name.
   projectName: "blog", // Usually your repo name.
+  deploymentBranch: "gh-pages",
 
   presets: [
     [
@@ -43,71 +44,84 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      hideableSidebar: true,
       navbar: {
-        title: "My Site",
+        title: "右耳朵猫(whinc)",
         logo: {
-          alt: "My Site Logo",
-          src: "img/logo.svg",
+          alt: "Logo",
+          src: "img/logo.png",
         },
         items: [
+          // {
+          //   type: "doc",
+          //   docId: "intro",
+          //   position: "left",
+          //   label: "Tutorial",
+          // },
+          { to: "/blog", label: "博客", position: "left" },
           {
             type: "doc",
-            docId: "intro",
+            docId: "about",
             position: "left",
-            label: "Tutorial",
+            label: "关于",
           },
-          { to: "/blog", label: "Blog", position: "left" },
           {
-            href: "https://github.com/facebook/docusaurus",
-            label: "GitHub",
+            href: "https://github.com/whinc/blog",
+            // label: "GitHub",
+            className: "header-github-link",
+            position: "right",
+          },
+          {
+            type: "search",
             position: "right",
           },
         ],
       },
       footer: {
         style: "dark",
-        links: [
-          {
-            title: "Docs",
-            items: [
-              {
-                label: "Tutorial",
-                to: "/docs/intro",
-              },
-            ],
-          },
-          {
-            title: "Community",
-            items: [
-              {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
-              },
-              {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
-              },
-              {
-                label: "Twitter",
-                href: "https://twitter.com/docusaurus",
-              },
-            ],
-          },
-          {
-            title: "More",
-            items: [
-              {
-                label: "Blog",
-                to: "/blog",
-              },
-              {
-                label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        // links: [
+        //   {
+        //     title: "Docs",
+        //     items: [
+        //       {
+        //         label: "Tutorial",
+        //         to: "/docs/intro",
+        //       },
+        //     ],
+        //   },
+        //   {
+        //     title: "Community",
+        //     items: [
+        //       {
+        //         label: "Stack Overflow",
+        //         href: "https://stackoverflow.com/questions/tagged/docusaurus",
+        //       },
+        //       {
+        //         label: "Discord",
+        //         href: "https://discordapp.com/invite/docusaurus",
+        //       },
+        //       {
+        //         label: "Twitter",
+        //         href: "https://twitter.com/docusaurus",
+        //       },
+        //     ],
+        //   },
+        //   {
+        //     title: "More",
+        //     items: [
+        //       {
+        //         label: "Blog",
+        //         to: "/blog",
+        //       },
+        //       {
+        //         label: "GitHub",
+        //         href: "https://github.com/facebook/docusaurus",
+        //       },
+        //     ],
+        //   },
+        // ],
+        copyright: `Copyright © ${new Date().getFullYear()} <a href="https://github.com/whinc" target="_blank">右耳朵猫(whinc)</a>
+          <br/>站点使用 <a href='https://github.com/facebook/docusaurus' target="_blank">Docusaurus</a> 构建`,
       },
       prism: {
         theme: lightCodeTheme,
