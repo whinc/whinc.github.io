@@ -4,6 +4,8 @@
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
+const editUrl = "https://github.com/whinc/whinc.github.io/tree/master/website";
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "右耳朵猫(whinc)",
@@ -25,14 +27,15 @@ const config = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          editUrl,
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          editUrl,
+          feedOptions: {
+            type: "all",
+          },
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
