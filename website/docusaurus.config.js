@@ -9,7 +9,7 @@ const config = {
   title: "右耳朵猫(whinc)",
   tagline: "分享技术，收获快乐",
   url: "https://whinc.github.io",
-  baseUrl: "/blog/",
+  baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
@@ -60,8 +60,7 @@ const config = {
           // },
           { to: "/blog", label: "博客", position: "left" },
           {
-            type: "doc",
-            docId: "about",
+            to: "/about",
             position: "left",
             label: "关于",
           },
