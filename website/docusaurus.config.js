@@ -30,8 +30,11 @@ const config = {
           editUrl,
         },
         blog: {
+          blogSidebarTitle: "全部文章",
+          blogSidebarCount: "ALL",
           showReadingTime: true,
           // Please change this to your repo.
+          postsPerPage: "ALL",
           editUrl,
           feedOptions: {
             type: "all",
@@ -128,6 +131,11 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+      },
+      algolia: {
+        appId: "IY8Y8S272C",
+        apiKey: "4c4ead1084900bfa68bf9daeefd545d8",
+        indexName: "whinc.github.io",
       },
     }),
 };

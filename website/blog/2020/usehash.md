@@ -1,19 +1,14 @@
 ---
-title: useHash 读写路由参数
-tags: ["useHash", "路由参数"]
+title: 自定义 hooks useHash 读写路由参数
+date: 2020-11-25
+tags: ["web前端", "react"]
 ---
-
-**目录**
-
-- 动机 & 目标
-- `useHash` - 读写 hash 值
-- `useHashSearchParams` - 读写 hash 的查询参数
-- `useHashSearchParamsJSON` - 按 JSON 格式读写 hash 的查询参数
-- 小结
 
 ## 动机 & 目标
 
 在基于 hash 模式的 web 单页应用中，经常需要读写 hash 中的查询参数，例如从 hash 查询参数中读取商品 ID。在 React 应用中，如果直接解析`window.location.hash`值，则 hash 变化时无法收到更新，你还需要监听`hashchange`事件来更新内部状态，这些繁琐的步骤可以封装成自定义 hooks，同时更进一步给参数加上自动类型解析和序列化，使其支持任意参数值类型（包括嵌套的 JSON 对象），全部这些功能仅需要一个简单的 hook 即可实现。
+
+<!-- truncate -->
 
 下面是最终实现的 hook 效果，通过`useHashSearchParamsJSON` hook 读写指定的查询参数，并且自动解析出正确的类型。
 
