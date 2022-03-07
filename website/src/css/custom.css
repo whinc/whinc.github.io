@@ -14,6 +14,34 @@
   --ifm-color-primary-lighter: #359962;
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
+  --ifm-font-size-base: 80%;
+ 
+  --ifm-h1-font-size: 1.5rem;
+  --ifm-h2-font-size: 1.25rem;
+  --ifm-h3-font-size: 1rem;
+  --ifm-h4-font-size: 0.875rem;
+  --ifm-h5-font-size: 0.85rem;
+  --ifm-h6-font-size: 0.825rem;
+}
+
+.blogPostTitle_node_modules-\@docusaurus-theme-classic-lib-next-theme-BlogPostItem-styles-module {
+  font-size: var(--ifm-h1-font-size) !important;
+}
+
+.markdown > h2 {
+  --ifm-h2-font-size: 1.25rem;
+}
+.markdown > h3 {
+  --ifm-h3-font-size: 1rem;
+}
+.markdown > h4{
+  --ifm-h4-font-size: 0.875rem;
+}
+.markdown > h5{
+  --ifm-h5-font-size: 0.85rem;
+}
+.markdown > h6{
+  --ifm-h6-font-size: 0.825rem;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
