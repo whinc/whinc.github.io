@@ -26,18 +26,18 @@
 .markdown > h3 {
   --ifm-h3-font-size: 1rem;
 }
-.markdown > h4{
+.markdown > h4 {
   --ifm-h4-font-size: 0.875rem;
 }
-.markdown > h5{
+.markdown > h5 {
   --ifm-h5-font-size: 0.85rem;
 }
-.markdown > h6{
+.markdown > h6 {
   --ifm-h6-font-size: 0.825rem;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-html[data-theme="dark"] {
+html[data-theme='dark'] {
   --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
@@ -54,7 +54,7 @@ html[data-theme="dark"] {
   padding: 0 var(--ifm-pre-padding);
 }
 
-html[data-theme="dark"] .docusaurus-highlight-code-line {
+html[data-theme='dark'] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
@@ -65,8 +65,8 @@ html[data-theme="dark"] .docusaurus-highlight-code-line {
 
 /* 设置链接 github 图标 */
 .header-github-link:before {
-  background: url("/img/github.svg") no-repeat;
-  content: "";
+  background: url('/img/github.svg') no-repeat;
+  content: '';
   display: flex;
   height: 24px;
   width: 24px;
