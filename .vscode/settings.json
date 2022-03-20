@@ -1,3 +1,14 @@
 {
-  "git.ignoreLimitWarning": true
+  "git.ignoreLimitWarning": true,
+  "yaml.schemas": {
+    "https://orange-ci.cdn-go.cn/orange-ci/latest/conf-schema.json": ".orange-ci.yml",
+    "https://staticfile.qq.com/bkdevops/ci-yaml-schema/latest/ci.json": ".ci/*.yml",
+    "https://staticfile.qq.com/bkdevops/ci-yaml-schema/latest/template-extends.json": ".ci/templates/extends*.yml",
+    "https://staticfile.qq.com/bkdevops/ci-yaml-schema/latest/template-variables.json": ".ci/templates/variables*.yml",
+    "https://staticfile.qq.com/bkdevops/ci-yaml-schema/latest/template-stages.json": ".ci/templates/stages*.yml",
+    "https://staticfile.qq.com/bkdevops/ci-yaml-schema/latest/template-gates.json": ".ci/templates/gates*.yml",
+    "https://staticfile.qq.com/bkdevops/ci-yaml-schema/latest/template-jobs.json": ".ci/templates/jobs*.yml",
+    "https://staticfile.qq.com/bkdevops/ci-yaml-schema/latest/template-steps.json": ".ci/templates/steps*.yml",
+    "https://json.schemastore.org/github-workflow.json": "file:///c%3A/cygwin64/home/Administrator/Projects/whinc.github.io/.github/workflows/deploy.yml"
+  }
 }
