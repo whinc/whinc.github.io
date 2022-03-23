@@ -1,5 +1,5 @@
 ---
-title: 简明教程——glob 模式匹配
+title: glob 模式匹配
 date: 2020-02-24
 tags: ["linux", "bash"]
 ---
