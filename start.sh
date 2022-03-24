@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
 
-cd website && npm i && npm start
+cd website
+if [[ ! -e node_moduels ]]; then
+    npm ci
+else
+    npm i
+fi
+npm start
