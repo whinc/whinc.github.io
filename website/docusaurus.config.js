@@ -50,7 +50,11 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      hideableSidebar: true,
+      docs: {
+        sidebar: {
+          hideable: true
+        }
+      },
       navbar: {
         title: "右耳朵猫(whinc)",
         logo: {
@@ -58,16 +62,16 @@ const config = {
           src: "img/logo.png",
         },
         items: [
-          // {
-          //   type: "doc",
-          //   docId: "intro",
-          //   position: "left",
-          //   label: "Tutorial",
-          // },
+          {
+            type: "doc",
+            docId: "intro",
+            position: "left",
+            label: "前端",
+          },
           { to: "/blog", label: "博客", position: "left" },
           {
             to: "/about",
-            position: "left",
+            position: "right",
             label: "关于",
           },
           {
