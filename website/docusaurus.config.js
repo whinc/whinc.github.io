@@ -63,12 +63,18 @@ const config = {
         },
         items: [
           {
-            type: "doc",
-            docId: "intro",
+            type: "docSidebar",
+            sidebarId: "frontend",
             position: "left",
-            label: "前端",
+            label: "笔记",
           },
           { to: "/blog", label: "博客", position: "left" },
+          {
+            type: "docSidebar",
+            sidebarId: "showcase",
+            position: "left",
+            label: "作品",
+          },
           {
             to: "/about",
             position: "right",

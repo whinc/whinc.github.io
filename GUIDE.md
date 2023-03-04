@@ -5,7 +5,11 @@
 在项目根目录下执行
 
 ```
-sh start.sh
+cd website
+# 安装依赖
+npm ci
+# 启动开发服务 localhost:3000
+npm start
 ```
 
 ## 发布
