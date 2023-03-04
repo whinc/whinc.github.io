@@ -55,6 +55,7 @@ const config = {
           hideable: true
         }
       },
+      metadata: [{ name: 'keywords', contentt: 'whinc, whincwu, 右耳朵猫' }],
       navbar: {
         title: "右耳朵猫(whinc)",
         logo: {
