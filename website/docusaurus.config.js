@@ -63,13 +63,13 @@ const config = {
           src: "img/logo.png",
         },
         items: [
+          { to: "/blog", label: "博客", position: "left" },
           {
             type: "docSidebar",
             sidebarId: "frontend",
             position: "left",
             label: "笔记",
           },
-          { to: "/blog", label: "博客", position: "left" },
           {
             type: "docSidebar",
             sidebarId: "showcase",
