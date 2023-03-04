@@ -1,17 +1,17 @@
 import { Modal, ModalProps } from 'antd';
 import React, { useCallback, useImperativeHandle, useState } from 'react';
-import { MyModalContent } from './MyModalContent';
+import { ContentProps, MyModalContent } from './MyModalContent';
 
 export interface MyModalProps {
-    onSuccess?(): void
+  onSuccess?(): void
 }
 
 export interface MyModalInstance {
-    open(payload?: Payload): void
-    close(): void
+  open(payload?: Payload): void
+  close(): void
 }
 
-type Payload =ContentProps & {modalProps?: ModalProps}
+type Payload = ContentProps & { modalProps?: ModalProps }
 
 export const MyModal = React.forwardRef<MyModalInstance, MyModalProps>(({ onSuccess }, ref) => {
   const [open, setOpen] = useState(false)
@@ -42,6 +42,6 @@ export const MyModal = React.forwardRef<MyModalInstance, MyModalProps>(({ onSucc
   );
 
   return (
-    <Modal {...payload.modalProps} open={open}><MyModalContent {...payload}/></Modal>
+    <Modal {...payload.modalProps} open={open}><MyModalContent {...payload} /></Modal>
   );
 });

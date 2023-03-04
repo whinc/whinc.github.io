@@ -1,5 +1,4 @@
 import { Button, message } from "antd";
-import "antd/dist/antd.css";
 import React from "react";
 import MyModal from "../demo2/MyModal";
 
@@ -10,15 +9,15 @@ export default function App() {
     <>
       <Button
         onClick={() =>
-          MyModal.show(({close, state, setState, ref}) => ({
+          MyModal.show(({ close, state, setState, ref }) => ({
             value: 'hello world!',
             modalProps: {
               confirmLoading: state.loading,
               onCancel: close,
               onOk: async () => {
-                setState({loading: true})
+                setState({ loading: true })
                 await mockRequest()
-                setState({loading: false})
+                setState({ loading: false })
                 message.success("ok");
                 close()
               },

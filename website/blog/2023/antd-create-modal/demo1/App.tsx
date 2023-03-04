@@ -1,5 +1,4 @@
 import { Button, message } from "antd";
-import "antd/dist/antd.css";
 import React, { useRef } from "react";
 import { MyModal, MyModalInstance } from "./MyModal";
 

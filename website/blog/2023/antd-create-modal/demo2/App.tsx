@@ -1,5 +1,4 @@
 import { Button, message } from "antd";
-import "antd/dist/antd.css";
 import React from "react";
 import MyModal from "./MyModal";
 
@@ -8,7 +7,7 @@ export default function App() {
     <>
       <Button
         onClick={() =>
-          MyModal.show(({close}) => ({
+          MyModal.show(({ close }) => ({
             value: 'hello world!',
             modalProps: {
               onCancel: close,
