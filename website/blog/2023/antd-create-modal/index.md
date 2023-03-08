@@ -19,6 +19,12 @@ import Demo1 from './demo1';
 
 基于上面弹窗的封装模式，根据需要可以进一步扩展，基本能满足大部分弹窗使用场景了。但是上面封装方式有不少样板代码，每次写个弹窗有不少重复工作，于是将对弹窗的封装模式剥离出来形成一个独立的函数`createModal`，这样可以大大减少样板代码，聚焦于编写弹窗的内容和交互逻辑。
 
+
+import CodeBlock from '@theme/CodeBlock';
+import createModal_ from '!!raw-loader!./createModal';
+
+<CodeBlock language="tsx">{createModal_}</CodeBlock>
+
 下面是基于 `createModal` 创建弹窗的示例，可以看到弹窗的源码已经减少到一行代码了，写弹窗时只需要关注于弹窗的内容区域，使用弹窗时也无需创建 ref 来引用弹窗，而是通过弹窗上暴露的静态方法`MyModal.show()`显示弹窗和传参。
 
 import Demo2 from './demo2';

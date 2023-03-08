@@ -1,5 +1,4 @@
 import App_ from '!!raw-loader!./App';
-import createModal_ from '!!raw-loader!./createModal';
 import MyModal_ from '!!raw-loader!./MyModal';
 import MyModalContent_ from '!!raw-loader!./MyModalContent';
 import CodeBlock from '@theme/CodeBlock';
@@ -16,9 +15,6 @@ export default function () {
             </TabItem>
             <TabItem value="2" label="App">
                 <CodeBlock language="tsx">{App_}</CodeBlock>
-            </TabItem>
-            <TabItem value="5" label="createModal" >
-                <CodeBlock language="tsx">{createModal_}</CodeBlock>
             </TabItem>
             <TabItem value="3" label="MyModal" >
                 <CodeBlock language="tsx">{MyModal_}</CodeBlock>

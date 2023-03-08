@@ -1,8 +1,8 @@
 import { Button, message } from "antd";
 import React from "react";
-import MyModal from "../demo2/MyModal";
+import MyModal from "./MyModal";
 
-const mockRequest = () => new Promise((r) => setTimeout(r, 2000))
+const mockRequest = (data: any) => new Promise((r) => setTimeout(r, 2000));
 
 export default function App() {
   return (
@@ -10,16 +10,21 @@ export default function App() {
       <Button
         onClick={() =>
           MyModal.show(({ close, state, setState, ref }) => ({
-            value: 'hello world!',
+            initialValues: {
+              name: "zhangsan",
+              age: 20,
+            },
             modalProps: {
+              title: "注册用户",
               confirmLoading: state.loading,
               onCancel: close,
               onOk: async () => {
-                setState({ loading: true })
-                await mockRequest()
-                setState({ loading: false })
-                message.success("ok");
-                close()
+                setState({ loading: true });
+                const formData = await ref.current.submit();
+                await mockRequest(formData);
+                setState({ loading: false });
+                message.success("提交表单：" + JSON.stringify(formData));
+                close();
               },
             },
           }))
