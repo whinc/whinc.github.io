@@ -5,7 +5,24 @@ keywords: ["antd", "modal"]
 
 # Antd 弹窗封装
 
-在 Antd 中弹窗的使用频率很高，简单的展示弹窗使用[Modal.method()](<https://4x.ant.design/components/modal-cn/#Modal.method()>)即可，复杂的弹窗的弹窗则需要自定义弹窗，以便控制弹窗的显示和隐藏，以及数据交互。
+在 Antd 中弹窗的使用频率很高，一个好用的弹窗我认为应该具备几个特点：
+1. 支持命令式调用，类似`window.alert()`这种方式（无需关注弹窗的声明位置）
+2. 能够与弹窗进行交互，即提供参数控制弹窗的渲染，同时弹窗关闭时能从中获取所需数据（这个在表单场景常见）
+3. 弹窗的状态与其所在组件树隔离（避免状态污染）
+
+Antd 提供的 [Modal.method()](<https://4x.ant.design/components/modal-cn/#Modal.method()>) 很好的处理了第 1 和 3 个问题，使用起来很简单，只需一行代码即可。
+
+```jsx
+Modal.confirm({
+    title: '确认？',
+    content: <MyModalContent>,
+    onOk () {
+        // do something
+    }
+})
+```
+
+但是`Modal.method()`并未解决第 2 个问题，其内容展示后就与当前上下文脱离联系了，为了实现所期望的弹窗，下面我尝试了几种封装方式，试图解决这个问题。
 
 ## 第一版
 
@@ -38,6 +55,16 @@ import Demo2 from './demo2';
 import Demo3 from './demo3';
 
 <Demo3/>
+
+## 第三版
+
+偶然浏览知乎看到[这篇文章](https://zhuanlan.zhihu.com/p/552965494)，才得知已经有人做了类似的工作，并且开源了叫 [nice-modal-react](https://github.com/eBay/nice-modal-react)，其原理是提供全局的`<Provider>`来存储和渲染全局弹窗，通过其提供的 `create()`方法创建的弹窗后，即可通过`show()/hide()`方法命令式使用弹窗，弹窗的内部状态与外部组件隔离，完全满足了文章开头提到的几个特点。
+
+下面是基于 nice-modal-react 库重写的上面例子
+
+import Demo4 from './demo4';
+
+<Demo4 />
 
 ## 小结
 
