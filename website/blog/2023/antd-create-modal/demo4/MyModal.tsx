@@ -21,8 +21,8 @@ export default NiceModal.create(({ onSubmit, initialValues }: MyModalProps) => {
         try {
           setLoading(true);
           await onSubmit(values);
-          modal.hide();
           modal.resolve();
+          modal.hide();
         } catch (err) {
           modal.reject(err);
         } finally {
@@ -31,7 +31,7 @@ export default NiceModal.create(({ onSubmit, initialValues }: MyModalProps) => {
       }}
     >
       <Form form={form} initialValues={initialValues}>
-        <Form.Item name={"name"} label="姓名">
+        <Form.Item name={"name"} label="姓名" rules={[{ required: true }]}>
           <Input />
         </Form.Item>
         <Form.Item name={"age"} label="年龄">

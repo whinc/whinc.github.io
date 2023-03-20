@@ -16,7 +16,11 @@ export default function App() {
               age: 20,
             },
             async onSubmit(values) {
+              const destory = message.loading(
+                "提交数据：" + JSON.stringify(values)
+              );
               await mockRequest(values);
+              destory();
             },
           };
 
