@@ -1,5 +1,5 @@
 import NiceModal, { useModal } from "@ebay/nice-modal-react";
-import { Form, Input, InputNumber, message, Modal } from "antd";
+import { Form, Input, InputNumber, Modal } from "antd";
 import React, { useState } from "react";
 
 export interface MyModalProps {
@@ -7,7 +7,7 @@ export interface MyModalProps {
   onSubmit?: (values: any) => Promise<any>;
 }
 
-export default NiceModal.create(function MyModal(props: MyModalProps) {
+export default NiceModal.create(({ onSubmit, initialValues }: MyModalProps) => {
   const [form] = Form.useForm();
   const modal = useModal();
   const [loading, setLoading] = useState(false);
@@ -16,27 +16,21 @@ export default NiceModal.create(function MyModal(props: MyModalProps) {
       {...NiceModal.antdModal(modal)}
       title="注册用户"
       confirmLoading={loading}
-      onOk={() => {
-        form
-          .validateFields()
-          .then((formData) => {
-            setLoading(true);
-            return props.onSubmit(formData);
-          })
-          .then(
-            () => {
-              setLoading(false);
-              modal.hide();
-              modal.resolve();
-            },
-            (error) => {
-              message.error(String(error));
-              setLoading(false);
-            }
-          );
+      onOk={async () => {
+        const values = await form.validateFields();
+        try {
+          setLoading(true);
+          await onSubmit(values);
+          modal.hide();
+          modal.resolve();
+        } catch (err) {
+          modal.reject(err);
+        } finally {
+          setLoading(false);
+        }
       }}
     >
-      <Form form={form} initialValues={props.initialValues}>
+      <Form form={form} initialValues={initialValues}>
         <Form.Item name={"name"} label="姓名">
           <Input />
         </Form.Item>

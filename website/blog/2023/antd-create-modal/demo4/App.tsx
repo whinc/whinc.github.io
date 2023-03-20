@@ -1,27 +1,29 @@
 import NiceModal from "@ebay/nice-modal-react";
 import { Button, message } from "antd";
 import React from "react";
-import MyModal, { MyModalProps } from "./MyModal";
+import MyModal from "./MyModal";
 
 const mockRequest = (data: any) => new Promise((r) => setTimeout(r, 2000));
+
 export default function App() {
   return (
     <NiceModal.Provider>
       <Button
         onClick={() => {
-          NiceModal.show<any>(MyModal, {
+          const props = {
             initialValues: {
               name: "zhangsan",
               age: 20,
             },
             async onSubmit(values) {
               await mockRequest(values);
-              message.success("提交表单：" + JSON.stringify(values));
             },
-          } as MyModalProps).then(
-            (value) => message.info(JSON.stringify(value)),
+          };
+
+          NiceModal.show(MyModal, props).then(
+            () => message.success("提交成功!"),
             (error) => {
-              message.error(String(error));
+              message.error("提交失败：" + error.message);
             }
           );
         }}
