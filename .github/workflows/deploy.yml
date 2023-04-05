@@ -2,7 +2,8 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    tags: [release@*]
+    branches:
+      - "master"
 
 jobs:
   deploy:
