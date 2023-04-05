@@ -8,8 +8,8 @@ const editUrl = "https://github.com/whinc/whinc.github.io/tree/master/website";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "右耳朵猫(whinc)",
-  tagline: "分享技术，收获快乐",
+  title: "右耳朵猫(whincwu)",
+  tagline: "分享技术，帮助别人，提高自己",
   url: "https://whinc.github.io",
   baseUrl: "/",
   onBrokenLinks: "throw",
@@ -18,6 +18,16 @@ const config = {
   organizationName: "whinc", // Usually your GitHub org/user name.
   projectName: "blog", // Usually your repo name.
   deploymentBranch: "gh-pages",
+  scripts: [
+    {
+      src: "https://embed.runkit.com",
+      defer: true,
+    }
+  ],
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
 
   presets: [
     [

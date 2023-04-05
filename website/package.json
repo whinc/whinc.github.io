@@ -16,6 +16,7 @@
   "dependencies": {
     "@docusaurus/core": "2.3.1",
     "@docusaurus/preset-classic": "2.3.1",
+    "@docusaurus/theme-mermaid": "^2.3.1",
     "@ebay/nice-modal-react": "^1.2.8",
     "@giscus/react": "^2.2.8",
     "@mdx-js/react": "^1.6.22",

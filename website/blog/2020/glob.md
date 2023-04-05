@@ -1,7 +1,8 @@
 ---
 title: glob 模式匹配
 date: 2020-02-24
-tags: ["linux", "bash"]
+tags: ["Node.js", "Linux"]
+keywords: ["glob", "模式匹配"]
 ---
 
 ## 介绍

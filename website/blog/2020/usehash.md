@@ -1,7 +1,7 @@
 ---
 title: 自定义 useHash hooks
 date: 2020-11-25
-tags: ["web前端", "react"]
+tags: ["React", "React Hooks"]
 ---
 
 ## 动机 & 目标
