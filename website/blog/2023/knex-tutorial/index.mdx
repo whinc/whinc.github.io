@@ -1,7 +1,6 @@
 ---
 tags: ["Node.js", "ORM"]
 keywords: ["knex", "orm", "query builder"]
-draft: true
 ---
 
 # Knex.js 教程
@@ -117,8 +116,54 @@ preamble={preamble}
 
 ### 连表查询
 
+<RunKitEmbed 
+source={`p(db.table('users')
+  .join('contacts', 'users.id', '=', 'contacts.user_id')
+  .select('users.id', 'contacts.phone'));
+// 多个 join 条件
+p(db.select('*').from('users').join('accounts', function() {
+  this
+    .on('accounts.id', '=', 'users.account_id')
+    .orOn('accounts.owner_id', '=', 'users.id')
+}));`} 
+preamble={preamble}
+/>
+
 ### 事务
+
+<RunKitEmbed 
+readOnly
+source={`db.transaction(function(trx) {
+  const books = [
+    {title: 'Canterbury Tales'},
+    {title: 'Moby Dick'},
+    {title: 'Hamlet'}
+  ];
+  return trx
+    .insert({name: 'Old Books'}, 'id')
+    .into('catalogues')
+    .then(function(ids) {
+      books.forEach((book) => book.catalogue_id = ids[0]);
+      return trx('books').insert(books);
+    })
+})
+.then(function(inserts) {
+    // 事务执行成功
+    console.log(inserts.length + ' new books saved.');
+})
+.catch(function(error) {
+    // 事务执行失败，自动回滚
+    // If we get here, that means that 
+    // neither the 'Old Books' catalogues insert,
+    // nor any of the books inserts will have taken place.
+    console.error(error);
+});
+`} 
+preamble={preamble}
+/>
 
 ## 数据迁移
 
-## 种子数据
+### 种子数据
+
+## 总结
