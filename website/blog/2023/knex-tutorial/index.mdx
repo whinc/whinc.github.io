@@ -4,39 +4,120 @@ keywords: ["knex", "orm", "query builder"]
 draft: true
 ---
 
-# Knex - SQL Query Builder
+# Knex.js 教程
 
 ## 什么是 Knex ？
 
-[Knex](https://github.com/knex/knex) 是一个 SQL 的 Query Builder，基于 Node.js 实现，支持 PostgreSQL, MySQL, CockroachDB, SQL Server, SQLite3 和 Oracle，被设计成灵活、可移植、易于使用。
+[Knex](https://github.com/knex/knex) 是一个使用 javascript 实现的跨数据库的 SQL Query Builder，基于 javascript 实现了一套灵活、可移植、易于使用 SQL DSL，支持的数据库有 PostgreSQL, MySQL, CockroachDB, SQL Server, SQLite3 和 Oracle，支持事务、数据迁移等，同时支持 Node.js 和浏览器。
 
-下面是 Knex 的使用示例，首先创建 Knex 实例，然后执行 SQL 查询。
+下面是 Knex 的使用示例，使用 js 实现的 DSL 读写上与 SQL 非常相似。
 
 import RunKitEmbed from '@site/src/components/RunKitEmbed';
+import preamble from '!!raw-loader!./preamble'
 
-<RunKitEmbed source={`
-    const knex = require('knex');
-    const db = knex({client: 'mysql'});
-    await db.table('aa').select('b', 'c').toSQL().toNative()
+<RunKitEmbed 
+evaluateOnLoad
+source={`
+${preamble}
+p(db.table('aa').select('b', 'c'))
 `} />
 
-## 应用场景
+## 优点及应用场景
 
-Node.js 没有提供像 JDBC 这样的数据库访问抽象层，导致基于原生的 Node.js 进行数据库编程时，需要面向不同的数据库类型提供的底层 SDK，优点是可以充分利用目标数据库的能力，缺点是需要学习特定数据库的方言、代码不具备可移植性。
+由于 Node.js 没有提供像 java 中的 JDBC 这样的数据库访问抽象层，导致基于原生的 Node.js 进行数据库编程时，需要面向不同的数据库类型提供的底层 SDK 编程，学习成本高、不可移植。
 
-Knex 建立在这些底层的数据库访问 SDK 之上，抽象除了统一的 API 接口访问底层数据库，其 API 设计成内部 DSL 风格，灵活且易于阅读。
-
+Knex 建立在底层数据库提供的 SDK 之上，提供统一的 API 数据库接口，可以将其看成是 Node.js 中类似"JDBC"的存在，代码与底层数据库耦合弱，方便在数据库之间迁移（如本地开发测试用 sqlite3，线上用MySQL），无需学习 SQL 方言。
 
 ```mermaid
 flowchart TD
-    A[Christmas] -->|Get money| B(Go shopping)
-    B --> C{Let me think}
-    C -->|One| D[Laptop]
-    C -->|Two| E[iPhone]
-    C -->|Three| F[fa:fa-car Car]
+    A[Web Server] -->|DSL based on javascript| B(Knex)
+    B --> MySQL
+    B --> PostgreSQL
+    B --> |native sql| SQLite3
+    B --> SQLServer[SQL Server]
+    B --> Oracle
 ```
 
 ## CRUD 示例
+
+下面示例演示基于 Knex 实现常见的 CRUD 操作，执行结果通过最终生成的 SQL 表示。
+
+### 定义表结构
+
+<RunKitEmbed 
+source={`
+p(db.schema.createTable('users', function (table) {
+  table.increments('id');
+  table.string('name');
+  table.integer('age');
+  table.timestamps('create_at');
+}))
+`} 
+preamble={preamble}
+/>
+
+### Create 插入
+
+<RunKitEmbed 
+source={`
+p(db.table('users').insert({name: 'whincwu', age: 32}))
+`} 
+preamble={preamble}
+/>
+
+### Read 查询
+
+<RunKitEmbed 
+source={`
+// 查询全部列
+p(db.select().from('users'))
+// 查询部分列 + 筛选条件 + 排序
+p(db.select(['name', 'age'])
+    .from('users')
+    .where('name', 'whincwu').andWhere('age', '>', 18)
+    .orderBy('age', 'desc')
+)
+// 模糊查询
+p(db.select(['name', 'age'])
+    .from('users')
+    .whereLike('name', 'w%')
+)
+`} 
+preamble={preamble}
+/>
+
+### Update 更新
+
+<RunKitEmbed 
+source={`
+// 按条件更新
+p(db.table('users').update({age: 33}).where('name', 'whincwu'))
+`} 
+preamble={preamble}
+/>
+
+### Delete 删除
+
+<RunKitEmbed 
+source={`
+// 按条件删除
+p(db.table('users').delete().where('id', '1'))
+`} 
+preamble={preamble}
+/>
+
+### 分页查询
+
+<RunKitEmbed 
+source={`
+p(db.select('*').from('users').limit(10).offset(30))
+`} 
+preamble={preamble}
+/>
+
+### 连表查询
+
+### 事务
 
 ## 数据迁移
 

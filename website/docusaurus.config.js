@@ -18,12 +18,6 @@ const config = {
   organizationName: "whinc", // Usually your GitHub org/user name.
   projectName: "blog", // Usually your repo name.
   deploymentBranch: "gh-pages",
-  scripts: [
-    {
-      src: "https://embed.runkit.com",
-      defer: true,
-    }
-  ],
   markdown: {
     mermaid: true,
   },

@@ -3,7 +3,7 @@ tags: ["Other"]
 keywords: ["blog", "博客", "博客搭建", "Docusaurus"]
 ---
 
-# 搭建博客站点 —— 基于 Docusaurus 
+# 搭建博客站点
 
 本文主要记录个人站点 [whinc.github.io](https://whinc.github.io/) 的搭建过程，以及后续的维护更新，可以看做是个人站点自身的一份 changelog
 
