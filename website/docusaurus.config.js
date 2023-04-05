@@ -144,9 +144,9 @@ const config = {
         darkTheme: darkCodeTheme,
       },
       algolia: {
-        appId: "IY8Y8S272C",
-        apiKey: "4c4ead1084900bfa68bf9daeefd545d8",
-        indexName: "whinc.github.io",
+        appId: "96Z44D671Y",
+        apiKey: "2c35b6fe7d3b825841cc2b93bab1041c",
+        indexName: "whinc",
       },
     }),
 };
