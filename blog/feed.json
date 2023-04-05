@@ -10,7 +10,7 @@
             "url": "https://whinc.github.io/blog/2023/antd-create-modal",
             "title": "Antd 弹窗封装",
             "summary": "在 Antd 中弹窗的使用频率很高，一个好用的弹窗我认为应该具备几个特点：",
-            "date_modified": "2023-03-20T11:30:24.000Z",
+            "date_modified": "2023-04-05T02:22:23.000Z",
             "tags": [
                 "antd",
                 "react"
@@ -22,7 +22,7 @@
             "url": "https://whinc.github.io/blog/2023/how-to-setup-blog",
             "title": "如何搭建博客站点",
             "summary": "本文主要记录个人站点 whinc.github.io 的搭建过程，以及后续的维护更新，可以看做是个人站点自身的一份 changelog",
-            "date_modified": "2023-03-20T11:30:24.000Z",
+            "date_modified": "2023-04-05T02:22:23.000Z",
             "tags": []
         },
         {
