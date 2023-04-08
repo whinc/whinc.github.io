@@ -37,7 +37,7 @@
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
+[data-theme="dark"] {
   --ifm-color-primary: #40a9ff;
   --ifm-color-primary-dark: #209bff;
   --ifm-color-primary-darker: #1093ff;
@@ -54,7 +54,7 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
-html[data-theme='dark'] .docusaurus-highlight-code-line {
+html[data-theme="dark"] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
@@ -65,13 +65,39 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 
 /* 设置链接 github 图标 */
 .header-github-link:before {
-  background: url('/img/github.svg') no-repeat;
-  content: '';
+  background: url("/img/github.svg") no-repeat;
+  content: "";
   display: flex;
   height: 24px;
   width: 24px;
 }
 
-[data-theme='dark'] .header-github-link:before {
-  background: url('/img/github_dark.svg') no-repeat;
+[data-theme="dark"] .header-github-link:before {
+  background: url("/img/github_dark.svg") no-repeat;
+}
+
+/* 滚动条 start */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+
+  /* stylelint-disable-next-line declaration-no-important */
+  display: block !important;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: #f5f5f5;
+  border-left: 1px solid #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #a8a8a8;
+  background-clip: padding-box;
+  border: 1px solid #f5f5f5;
+  min-height: 28px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  border: 1px solid #f5f5f5;
+  background-color: #929292;
 }

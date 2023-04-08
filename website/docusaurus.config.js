@@ -90,6 +90,11 @@ const config = {
             label: "作品",
           },
           {
+            to: '/tools',
+            position: "left",
+            label: "工具",
+          },
+          {
             to: "/about",
             position: "right",
             label: "关于",
