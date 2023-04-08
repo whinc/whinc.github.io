@@ -1,6 +1,6 @@
 import { LinkOutlined, SearchOutlined } from "@ant-design/icons";
 import Layout from "@theme/Layout";
-import { Card, Col, Input, Row, Space } from "antd";
+import { Card, Col, Grid, Input, Row, Space } from "antd";
 import React, { useCallback, useState } from "react";
 import GiscusComment from "../components/GiscusComment";
 import { highlightKeyword } from "../utils";
@@ -62,9 +62,14 @@ export default function ToolsPage() {
     },
     [keyword]
   );
+  const screens = Grid.useBreakpoint();
   return (
     <Layout title="工具" description="开发常用的一些在线工具">
-      <div style={{ padding: "50px 20vw" }}>
+      <div
+        style={
+          screens["xs"] ? { padding: "20px 10px" } : { padding: "50px 20vw" }
+        }
+      >
         <Input
           addonBefore={
             <Space>
@@ -83,8 +88,9 @@ export default function ToolsPage() {
             <Col
               key={i}
               span={6}
-              xs={12}
-              lg={8}
+              xs={24}
+              lg={12}
+              xl={8}
               xxl={6}
               style={{ marginBottom: 20 }}
             >
