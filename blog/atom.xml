@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://whinc.github.io/blog</id>
-    <title>右耳朵猫(whincwu) Blog</title>
+    <title>whincwu(右耳朵猫) Blog</title>
     <updated>2023-04-05T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://whinc.github.io/blog"/>
-    <subtitle>右耳朵猫(whincwu) Blog</subtitle>
+    <subtitle>whincwu(右耳朵猫) Blog</subtitle>
     <icon>https://whinc.github.io/img/favicon.ico</icon>
     <rights>Copyright © 2023 whincwu(右耳朵猫)</rights>
     <entry>

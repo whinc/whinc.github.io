@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
                        xmlns:moz="http://www.mozilla.org/2006/browser/search/">
-  <ShortName>右耳朵猫(whincwu)</ShortName>
-  <Description>Search 右耳朵猫(whincwu)</Description>
+  <ShortName>whincwu(右耳朵猫)</ShortName>
+  <Description>Search whincwu(右耳朵猫)</Description>
   <InputEncoding>UTF-8</InputEncoding>
   <Image width="16" height="16" type="image/x-icon">https://whinc.github.io/img/favicon.ico</Image>
   <Url type="text/html" method="get" template="https://whinc.github.io/search?q={searchTerms}"/>

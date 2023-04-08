@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
-        <title>右耳朵猫(whincwu) Blog</title>
+        <title>whincwu(右耳朵猫) Blog</title>
         <link>https://whinc.github.io/blog</link>
-        <description>右耳朵猫(whincwu) Blog</description>
+        <description>whincwu(右耳朵猫) Blog</description>
         <lastBuildDate>Wed, 05 Apr 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>

@@ -1,8 +1,8 @@
 {
     "version": "https://jsonfeed.org/version/1",
-    "title": "右耳朵猫(whincwu) Blog",
+    "title": "whincwu(右耳朵猫) Blog",
     "home_page_url": "https://whinc.github.io/blog",
-    "description": "右耳朵猫(whincwu) Blog",
+    "description": "whincwu(右耳朵猫) Blog",
     "items": [
         {
             "id": "https://whinc.github.io/blog/2023/04/05/knex-tutorial",
