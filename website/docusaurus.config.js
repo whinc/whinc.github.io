@@ -8,7 +8,7 @@ const editUrl = "https://github.com/whinc/whinc.github.io/tree/master/website";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "右耳朵猫(whincwu)",
+  title: "whincwu(右耳朵猫)",
   tagline: "分享技术，帮助别人，提高自己",
   url: "https://whinc.github.io",
   baseUrl: "/",

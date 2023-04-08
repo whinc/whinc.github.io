@@ -43,12 +43,23 @@ const tools: Array<ToolItem> = [
     title: "Runkit",
     siteUrl: "https://runkit.com/",
     description:
-      "开箱即用的 Node.js 沙盒，预装了各个版本的 Node.js，可直接使用 npm 上的包 ,,, 开箱即用的 Node.js 沙盒，预装了各个版本的 Node.js，可直接使用 npm 上的包",
+      "开箱即用的 Node.js 沙盒，预装了各个版本的 Node.js，可直接使用 npm 上的包",
+  },
+  {
+    title: "Excalidraw",
+    siteUrl: "https://excalidraw.com/",
+    description: "自由手绘图",
+  },
+  {
+    title: "Mermaid",
+    siteUrl: "https://mermaid.live/",
+    description: "纯文本 DSL 绘制序列图、流程图、状态图、类图、Git图等",
   },
 ];
 
 export default function ToolsPage() {
   const [keyword, setKeyword] = useState("");
+
   const filterFn = useCallback(
     (item: ToolItem) => {
       if (!keyword) return true;
@@ -62,6 +73,13 @@ export default function ToolsPage() {
     },
     [keyword]
   );
+
+  const sortFn = useCallback(
+    (a: ToolItem, b: ToolItem) =>
+      a.title < b.title ? -1 : a.title > b.title ? 1 : 0,
+    []
+  );
+
   const screens = Grid.useBreakpoint();
   return (
     <Layout title="工具" description="开发常用的一些在线工具">
@@ -71,6 +89,7 @@ export default function ToolsPage() {
         }
       >
         <Input
+          allowClear
           addonBefore={
             <Space>
               <span>搜索</span>
@@ -84,36 +103,39 @@ export default function ToolsPage() {
           onChange={(e) => setKeyword(e.target.value)}
         />
         <Row gutter={20} wrap>
-          {tools.filter(filterFn).map((item, i) => (
-            <Col
-              key={i}
-              span={6}
-              xs={24}
-              lg={12}
-              xl={8}
-              xxl={6}
-              style={{ marginBottom: 20 }}
-            >
-              <a href={item.siteUrl} target={"_blank"} rel="noreferrer">
-                <Card
-                  hoverable
-                  title={
-                    <span>
-                      {highlightKeyword(item.title, keyword)} <LinkOutlined />
-                    </span>
-                  }
-                >
-                  <Space
-                    direction="vertical"
-                    style={{ height: 80, overflow: "auto" }}
+          {tools
+            .filter(filterFn)
+            .sort(sortFn)
+            .map((item, i) => (
+              <Col
+                key={i}
+                span={6}
+                xs={24}
+                lg={12}
+                xl={8}
+                xxl={6}
+                style={{ marginBottom: 20 }}
+              >
+                <a href={item.siteUrl} target={"_blank"} rel="noreferrer">
+                  <Card
+                    hoverable
+                    title={
+                      <span>
+                        {highlightKeyword(item.title, keyword)} <LinkOutlined />
+                      </span>
+                    }
                   >
-                    <div>{highlightKeyword(item.description, keyword)}</div>
-                    {/* <img src={item.coverUrl} /> */}
-                  </Space>
-                </Card>
-              </a>
-            </Col>
-          ))}
+                    <Space
+                      direction="vertical"
+                      style={{ height: 80, overflow: "auto" }}
+                    >
+                      <div>{highlightKeyword(item.description, keyword)}</div>
+                      {/* <img src={item.coverUrl} /> */}
+                    </Space>
+                  </Card>
+                </a>
+              </Col>
+            ))}
         </Row>
         <div style={{ marginTop: 20 }}>
           <GiscusComment />

@@ -9,7 +9,7 @@ export default function BlogPostItemWrapper(props) {
       <BlogPostItem {...props} />
       <BrowserOnly>
         {() => {
-          const showComment = window.location.pathname.startsWith('/blog/')
+          const showComment = /\/blog\/.+$/.test(window.location.pathname)
           return showComment && <GiscusComment />
         }}
       </BrowserOnly>
