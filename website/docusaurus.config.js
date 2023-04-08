@@ -41,7 +41,16 @@ const config = {
           postsPerPage: "ALL",
           editUrl,
           feedOptions: {
-            type: "all",
+            type: 'all',
+            copyright: `Copyright © ${new Date().getFullYear()} whincwu(右耳朵猫)`,
+            createFeedItems: async (params) => {
+              const { blogPosts, defaultCreateFeedItems, ...rest } = params;
+              return defaultCreateFeedItems({
+                // keep only the 10 most recent blog posts in the feed
+                blogPosts: blogPosts.filter((item, index) => index < 10),
+                ...rest,
+              });
+            },
           },
         },
         theme: {
@@ -141,7 +150,7 @@ const config = {
         //   },
         // ],
         copyright: `Copyright © ${new Date().getFullYear()} <a href="https://github.com/whinc" target="_blank">右耳朵猫(whinc)</a>
-          <br/>站点使用 <a href='https://github.com/facebook/docusaurus' target="_blank">Docusaurus</a> 构建`,
+          <br/>站点使用 <a href='https://docusaurus.io/' target="_blank">Docusaurus</a> 构建`,
       },
       prism: {
         theme: lightCodeTheme,

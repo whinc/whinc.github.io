@@ -9,6 +9,8 @@ keywords: ["blog", "博客", "博客搭建", "Docusaurus"]
 
 站点基于 [Docusaurus](https://docusaurus.io/) 搭建，其提供了博客、文档(MDX)、React 单单页应用多种模式构建站点，可以满足大部分的个人定制化的需求。
 
+<!--truncate-->
+
 ## 添加文章评论 - Giscus
 
 [giscus](https://github.com/giscus/giscus) 是一个基于 Github 的开源免费的评论系统，其原理是基于 github 的 discussion 功能来实现评论的存储。

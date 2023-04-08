@@ -1,8 +1,8 @@
 ---
-title: 自定义 useHash hooks
-date: 2020-11-25
 tags: ["React", "React Hooks"]
 ---
+
+# 自定义 hooks - useHash
 
 ## 动机 & 目标
 

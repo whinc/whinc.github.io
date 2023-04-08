@@ -31,13 +31,19 @@ export default function RunKitEmbed({ source, ...props }: RunKitEmbedProps) {
   }, [status]);
 
   return (
-    <Spin spinning={status === "loading"} tip="加载 RunKit ...">
-      <Spin spinning={status === "ready" && rendering} tip="渲染 RunKit ...">
-        {(status !== "ready" || rendering) && (
-          <CodeBlock language="javascript">{source.trim()}</CodeBlock>
-        )}
-        <div ref={ref}></div>
-      </Spin>
-    </Spin>
+    <>
+      {(status !== "ready" || rendering) && (
+        <CodeBlock language="javascript">{source.trim()}</CodeBlock>
+      )}
+      <div ref={ref}></div>
+      {process.env.NODE_ENV === "development" && (
+        <Spin spinning={status === "loading"} tip="加载 RunKit ...">
+          <Spin
+            spinning={status === "ready" && rendering}
+            tip="渲染 RunKit ..."
+          ></Spin>
+        </Spin>
+      )}
+    </>
   );
 }
