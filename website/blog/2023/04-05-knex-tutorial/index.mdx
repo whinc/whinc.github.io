@@ -33,12 +33,12 @@ Knex 建立在底层数据库提供的 SDK 之上，提供统一的 API 数据�
 
 ```mermaid
 flowchart TD
-    A[Web Server] -->|DSL based on javascript| B(Knex)
-    B --> MySQL
-    B --> PostgreSQL
+    A[Application] -->|DSL based on javascript| B(Knex)
+    B --> |native sql|MySQL
+    B --> |native sql|PostgreSQL
     B --> |native sql| SQLite3
-    B --> SQLServer[SQL Server]
-    B --> Oracle
+    B --> |native sql|SQLServer[SQL Server]
+    B --> |native sql|Oracle
 ```
 
 ## 优缺点及应用场景
