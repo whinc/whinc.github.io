@@ -26,26 +26,14 @@ keywords: ["blog", "博客", "博客搭建", "Docusaurus"]
 
 接入步骤：
 
-1. 引入 RunKit 包：参考 [docusaurus scripts](https://docusaurus.io/docs/2.3.1/api/docusaurus-config#scripts) 文档，在 docusaurus.config.js 中添加下面代码段
-```js
-export.modules = {
-  scripts: [
-    {
-      src: "https://embed.runkit.com",
-      defer: true,
-    }
-  ],
-}
-```
-
-2. 封装 RunKitEmbed 组件：[RunKit Embed](https://runkit.com/docs/embed) 文档提供了原生 JS 嵌入 RunKit 的方法，也提供了 WebComponent 和 React 的封装，不过 React 的封装版本太旧了(react 16)，于是自行封装了一个 React hooks 组件（如下），可在 MDX 中直接使用。
+1. 封装 RunKitEmbed 组件：[RunKit Embed](https://runkit.com/docs/embed) 文档提供了原生 JS 嵌入 RunKit 的方法，也提供了 WebComponent 和 React 的封装，不过 React 的封装版本太旧了(react 16)，于是自行封装了一个 React hooks 组件（如下），可在 MDX 中直接使用。
 
 import CodeBlock from '@theme/CodeBlock';
 import RunKitEmbed_ from '!!raw-loader!@site/src/components/RunKitEmbed';
 
 <CodeBlock language="tsx">{RunKitEmbed_}</CodeBlock>
 
-3. 在 MDX 中嵌入 RunKit：引入上面封装的 RunKitEmbed 组件，传入 source 源码即可，如果想对 RunKit 做细粒度的控制，参考上面的 RunKit Embed 文档
+2. 在 MDX 中嵌入 RunKit：引入上面封装的 RunKitEmbed 组件，传入 source 源码即可，如果想对 RunKit 做细粒度的控制，参考上面的 RunKit Embed 文档
 
 ```jsx
 import RunKitEmbed from '@site/src/components/RunKitEmbed';

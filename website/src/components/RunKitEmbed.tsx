@@ -8,10 +8,10 @@ type RunKitEmbedProps = EmbedOptions;
 
 export default function RunKitEmbed({ source, ...props }: RunKitEmbedProps) {
   const [rendering, setRendering] = useState(false);
-  const status = useExternal("/js/runkit.js", {
+  const status = useExternal("https://embed.runkit.com", {
+    type: "js",
     js: {
-      async: true,
-      // defer: true,
+      defer: true,
     },
   });
   const ref = useRef<HTMLDivElement>(null);
@@ -38,10 +38,7 @@ export default function RunKitEmbed({ source, ...props }: RunKitEmbedProps) {
       <div ref={ref}></div>
       {process.env.NODE_ENV === "development" && (
         <Spin spinning={status === "loading"} tip="加载 RunKit ...">
-          <Spin
-            spinning={status === "ready" && rendering}
-            tip="渲染 RunKit ..."
-          ></Spin>
+          <Spin spinning={status === "ready" && rendering}></Spin>
         </Spin>
       )}
     </>
