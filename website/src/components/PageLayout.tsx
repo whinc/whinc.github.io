@@ -2,25 +2,29 @@ import { useColorMode } from "@docusaurus/theme-common";
 import Layout from "@theme/Layout";
 import { ConfigProvider, theme } from "antd";
 import React from "react";
+import usePrimaryColor from "../hooks/usePrimaryColor";
 
-export type PageLayoutProps = React.ComponentProps<typeof Layout> & {};
+export type PageLayoutProps = React.ComponentProps<typeof Layout> & {
+  children?: React.ReactNode;
+};
 
-export default function PageLayout(props: PageLayoutProps) {
+export default function PageLayout({ children, ...props }: PageLayoutProps) {
   return (
-    <Layout>
-      <PageLayoutInternal {...props} />
+    <Layout noFooter {...props}>
+      <PageLayoutInternal>{children}</PageLayoutInternal>
     </Layout>
   );
 }
 
 function PageLayoutInternal(props: PageLayoutProps) {
   const { colorMode } = useColorMode();
+  const colorPrimary = usePrimaryColor();
 
   return (
     <ConfigProvider
       theme={{
         token: {
-          colorPrimary: colorMode === "dark" ? "#40a9ff" : "#2f54eb",
+          colorPrimary,
         },
         algorithm:
           colorMode === "dark" ? theme.darkAlgorithm : theme.defaultAlgorithm,

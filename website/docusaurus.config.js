@@ -77,12 +77,12 @@ const config = {
         },
         items: [
           { to: "/blog", label: "博客", position: "left" },
-          {
-            type: "docSidebar",
-            sidebarId: "frontend",
-            position: "left",
-            label: "笔记",
-          },
+          // {
+          //   type: "docSidebar",
+          //   sidebarId: "frontend",
+          //   position: "left",
+          //   label: "笔记",
+          // },
           {
             type: "docSidebar",
             sidebarId: "showcase",
@@ -93,6 +93,11 @@ const config = {
             to: '/tools',
             position: "left",
             label: "工具",
+          },
+          {
+            to: '/manual',
+            position: "left",
+            label: "手册",
           },
           {
             to: "/about",

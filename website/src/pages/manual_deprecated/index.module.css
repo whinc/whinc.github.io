@@ -1,0 +1,14 @@
+.root {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.sideMenu {
+  flex: 0 0 200px;
+  overflow-y: auto;
+}
+
+.content {
+  flex: 1 1 0;
+}

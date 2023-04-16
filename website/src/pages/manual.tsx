@@ -1,5 +1,5 @@
 import { LinkOutlined, SearchOutlined } from "@ant-design/icons";
-import { Card, Col, Grid, Input, Row, Space } from "antd";
+import { Card, Col, Grid, Input, Row, Space, Tag } from "antd";
 import React, { useCallback, useState } from "react";
 import GiscusComment from "../components/GiscusComment";
 import PageLayout from "../components/PageLayout";
@@ -10,50 +10,57 @@ type ToolItem = {
   description?: string;
   coverUrl?: string;
   siteUrl?: string;
+  tags?: string[];
 };
 
 const tools: Array<ToolItem> = [
   {
-    title: "regular expression 101",
-    siteUrl: "https://regex101.com/",
-    description: "正则表达式测试",
+    title: "DevDocs",
+    siteUrl: "https://devdocs.io/",
+    description: "API Documentation Browser",
+    tags: [
+      "javascript",
+      "css",
+      "html",
+      "nginx",
+      "docker",
+      "node.js",
+      "make",
+      "lodash",
+      "http",
+    ],
   },
   {
-    title: "Regex-Vis",
-    siteUrl: "https://regex-vis.com/",
-    description: "正则表达式可视化",
+    title: "MDN",
+    siteUrl: "https://developer.mozilla.org/en-US/docs/Web",
+    description: "Mozilla Developer Network, Web technology for developers",
+    tags: ["javascript", "css", "html", "http"],
   },
   {
-    title: "Glob Tool",
-    siteUrl: "https://www.digitalocean.com/community/tools/glob",
-    description: "glob测试",
+    title: "Node.js API",
+    siteUrl: "https://nodejs.dev/en/api/",
+    description: "Node.js API Documentation",
   },
   {
-    title: "NGINXConfig",
-    siteUrl:
-      "https://www.digitalocean.com/community/tools/nginx?global.app.lang=enUS",
-    description: "nginx配置生成",
-  },
-  {
-    title: "JWT Debugger",
-    siteUrl: "https://jwt.io/",
-    description: "JSON Web Token 调试",
-  },
-  {
-    title: "Runkit",
-    siteUrl: "https://runkit.com/",
+    title: "Linux Command",
+    siteUrl: "https://wangchujiang.com/linux-command/",
     description:
-      "开箱即用的 Node.js 沙盒，预装了各个版本的 Node.js，可直接使用 npm 上的包",
+      "Linux命令大全搜索工具，内容包含Linux命令手册、详解、学习、搜集。",
   },
   {
-    title: "Excalidraw",
-    siteUrl: "https://excalidraw.com/",
-    description: "自由手绘图",
+    title: "vim 中文速查表",
+    siteUrl:
+      "https://github.com/skywind3000/awesome-cheatsheets/blob/master/editors/vim.txt",
   },
   {
-    title: "Mermaid",
-    siteUrl: "https://mermaid.live/",
-    description: "纯文本 DSL 绘制序列图、流程图、状态图、类图、Git图等",
+    title: "tmux 速查表",
+    siteUrl:
+      "https://github.com/skywind3000/awesome-cheatsheets/blob/master/tools/tmux.txt",
+  },
+  {
+    title: "bash 速查表",
+    siteUrl:
+      "https://github.com/skywind3000/awesome-cheatsheets/blob/master/languages/bash.sh",
   },
 ];
 
@@ -69,6 +76,10 @@ export default function ToolsPage() {
           item.description.toUpperCase().includes(keyword.toUpperCase()))
       )
         return true;
+      if (Array.isArray(item.tags) && item.tags.length > 0)
+        return item.tags.some((tag) =>
+          tag.toUpperCase().includes(keyword.toUpperCase())
+        );
       return false;
     },
     [keyword]
@@ -128,10 +139,24 @@ export default function ToolsPage() {
                   >
                     <Space
                       direction="vertical"
-                      style={{ height: 80, overflow: "auto" }}
+                      size={16}
+                      style={{ minHeight: 80, maxHeight: 160, width: "100%" }}
                     >
                       <div>{highlightKeyword(item.description, keyword)}</div>
                       {/* <img src={item.coverUrl} /> */}
+                      <div style={{ whiteSpace: "nowrap", overflow: "auto" }}>
+                        {item.tags
+                          ?.filter(
+                            (tag) =>
+                              !keyword ||
+                              tag.toUpperCase().includes(keyword.toUpperCase())
+                          )
+                          .map((tag) => (
+                            <Tag key={tag} color={"green"}>
+                              {highlightKeyword(tag, keyword)}
+                            </Tag>
+                          ))}
+                      </div>
                     </Space>
                   </Card>
                 </a>
