@@ -5,13 +5,9 @@ keywords: ["knex", "orm", "query builder"]
 
 # Knex.js 教程
 
-## 什么是 Knex ？
+## 什么是 Knex.js ？
 
-[Knex](https://github.com/knex/knex) 是一个流行的Node.js SQL查询构建器，它允许你使用JavaScript语言编写SQL查询，而无需直接编写SQL语句。它支持多种数据库，包括MySQL，PostgreSQL，SQLite和Microsoft SQL Server等。
-
-使用Knex.js，你可以轻松地构建复杂的SQL查询，包括联接、子查询和聚合函数等。它还提供了一些方便的功能，如事务处理，批量插入和更新等。
-
-Knex.js的API简单易用，具有良好的文档和社区支持。它还提供了可扩展性和灵活性，允许你轻松地自定义和扩展其功能。
+[Knex.js](https://github.com/knex/knex) 是一个流行的Node.js SQL查询构建器，它允许你使用JavaScript语言编写SQL查询，而无需直接编写SQL语句。它支持多种数据库，包括MySQL，PostgreSQL，SQLite和Microsoft SQL Server等。使用Knex.js，你可以轻松地构建复杂的SQL查询，包括联接、子查询和聚合函数等。它还提供了一些方便的功能，如事务处理，批量插入和更新等，更多信息参考[Knex.js Guide](https://knexjs.org/guide)
 
 下面是 Knex 的使用示例，使用 js 实现的 DSL 读写上与 SQL 非常相似。
 
@@ -41,7 +37,7 @@ flowchart TD
     B --> |native sql|Oracle
 ```
 
-## 优缺点及应用场景
+## 优缺点
 
 优点：
 - **简单易用**：Knex.js提供了一种简单而直观的API，使得构建和执行SQL查询变得非常容易。
@@ -54,13 +50,28 @@ flowchart TD
 - **学习曲线**：尽管Knex.js的API相对简单，但对于新手来说，学习如何使用它可能需要一些时间和努力。
 - **限制**：Knex.js的查询构建器可能无法满足所有的查询需求，因为它是基于一组预定义的API构建的，而不是原生的SQL查询语句。
 
-应用场景：
+## 应用场景
+
 - Web应用程序：Knex.js可以用于构建Web应用程序的后端，以便与数据库进行交互。它可以帮助开发人员轻松地构建和执行SQL查询，从而简化了Web应用程序的开发过程。
 - 数据分析：Knex.js可以用于数据分析应用程序，以便从数据库中检索和分析数据。它可以帮助开发人员轻松地构建复杂的查询，从而使数据分析变得更加容易。
 - 数据库管理工具：Knex.js可以用于构建数据库管理工具，以便管理和维护数据库。它可以帮助开发人员轻松地执行数据库操作，例如创建表格、插入数据和更新数据等。
 - 服务器端渲染：Knex.js可以用于服务器端渲染应用程序，以便从数据库中检索数据并将其呈现为HTML。它可以帮助开发人员轻松地构建复杂的查询，从而使服务器端渲染变得更加容易。
 
+## 安装
+
+使用 Knex.js 前，除了需要安装 knex.js 包自身，还需要额外安装底层数据库驱动，例如下面例子，更多细节参考 [Knex.js Installation](https://knexjs.org/guide/#node-js)
+
+```bash
+npm install knex
+npm install sqlite3
+# npm install mysql
+```
+
+> 底层驱动涉及 C++ 模块编译，如果遇到版本不匹配，可尝试升级本机 C/C++ 依赖库版本，或者降级 npm 依赖的版本，以满足编译要求
+
 ## 配置
+
+更多细节参考[Knex.js Configuration Options](https://knexjs.org/guide/#configuration-options)
 
 ### 连接池配置
 
@@ -84,6 +95,8 @@ const knex = require('knex')({
 ```
 
 ## 实战示例
+
+[示例的 Github 地址](https://github.com/whinc/nodejs-examples/tree/main/knex)
 
 ### Schema Building
 
