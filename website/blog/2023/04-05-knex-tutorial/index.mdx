@@ -9,7 +9,7 @@ keywords: ["knex", "orm", "query builder"]
 
 [Knex.js](https://github.com/knex/knex) 是一个流行的Node.js SQL查询构建器，它允许你使用JavaScript语言编写SQL查询，而无需直接编写SQL语句。它支持多种数据库，包括MySQL，PostgreSQL，SQLite和Microsoft SQL Server等。使用Knex.js，你可以轻松地构建复杂的SQL查询，包括联接、子查询和聚合函数等。它还提供了一些方便的功能，如事务处理，批量插入和更新等，更多信息参考[Knex.js Guide](https://knexjs.org/guide)
 
-下面是 Knex 的使用示例，使用 js 实现的 DSL 读写上与 SQL 非常相似。
+下面是 Knex 的使用示例，使用 js 实现的 DSL 读写上与 SQL 非常相似（可以尝试修改代码查看生成的 SQL 语句）。
 
 import RunKitEmbed from '@site/src/components/RunKitEmbed';
 import preamble from '!!raw-loader!./preamble'
@@ -59,19 +59,20 @@ flowchart TD
 
 ## 安装
 
-使用 Knex.js 前，除了需要安装 knex.js 包自身，还需要额外安装底层数据库驱动，例如下面例子，更多细节参考 [Knex.js Installation](https://knexjs.org/guide/#node-js)
+使用 Knex.js 前，除了需要安装 knex.js 包自身，还需要安装对应底层数据库驱动，如果使用了多种数据库都需要安装，例如下面例子：
 
 ```bash
 npm install knex
+
 npm install sqlite3
 # npm install mysql
 ```
 
 > 底层驱动涉及 C++ 模块编译，如果遇到版本不匹配，可尝试升级本机 C/C++ 依赖库版本，或者降级 npm 依赖的版本，以满足编译要求
 
-## 配置
+> 更多安装细节参考 [Knex.js Installation](https://knexjs.org/guide/#node-js)
 
-更多细节参考[Knex.js Configuration Options](https://knexjs.org/guide/#configuration-options)
+## 配置
 
 ### 连接池配置
 
@@ -94,9 +95,11 @@ const knex = require('knex')({
 });
 ```
 
+> 更多配置细节参考[Knex.js Configuration Options](https://knexjs.org/guide/#configuration-options)
+
 ## 实战示例
 
-[示例的 Github 地址](https://github.com/whinc/nodejs-examples/tree/main/knex)
+> 本节出现的示例的代码放在 [Github](https://github.com/whinc/nodejs-examples/tree/main/knex)
 
 ### Schema Building
 
@@ -142,7 +145,7 @@ knex.schema.dropTable('users')
 });
 ```
 
-4. 添加列：使用`addColumn`方法可以向现有的数据库表格添加新列。
+4. 添加列：使用`string/integer/date/...`等类型方法，可以向现有的数据库表格添加新列。
 ```javascript
 knex.schema.table('users', (table) => {
   table.string('password');
@@ -155,7 +158,7 @@ knex.schema.table('users', (table) => {
 });
 ```
 
-5. 修改列：使用`alterColumn`方法可以修改现有的数据库表格列。
+5. 修改列
 ```javascript
 knex.schema.table('users', (table) => {
   table.string('password').notNullable().defaultTo('');
