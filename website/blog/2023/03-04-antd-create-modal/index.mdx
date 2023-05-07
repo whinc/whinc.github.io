@@ -5,9 +5,50 @@ keywords: ["antd", "antd modal", "antd 弹窗"]
 
 # Ant Design 弹窗封装：易用性和可维护性
 
-在 Antd 中弹窗的使用频率很高，一个好用的弹窗我认为应该具备几个特点：
-1. 支持命令式调用，类似`window.alert()`这种方式（无需关注弹窗的声明位置）
-2. 能够与弹窗进行交互，即提供参数控制弹窗的渲染，同时弹窗关闭时能从中获取所需数据（这个在表单场景常见）
+在 Antd 中弹窗的使用频率很高，Antd 提供的`Modal`组件一般用法如下：
+
+```jsx
+import React, { useState } from 'react';
+import { Button, Modal } from 'antd';
+
+const App: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
+  return (
+    <>
+      <Button type="primary" onClick={showModal}>
+        Open Modal
+      </Button>
+      <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Modal>
+    </>
+  );
+};
+```
+
+上面使用方式存在几个问题：
+1. 弹窗与所属组件的状态混在一起，容易依赖组件内部的状态，导致其他地方不易复用
+2. 使用时需要关注弹窗的渲染位置，并主动控制弹窗的显示和隐藏细节
+3. 弹窗内容的渲染时机不好控制（需要额外处理），例如实现仅当弹窗可见时，才动态加载内容
+
+我认为一个好用的弹窗我认为应该具备几个特点：
+1. 支持命令式调用，类似`window.alert()`这种方式（使用方无需关注弹窗的声明位置）
+2. 支持与弹窗的双向交互，即提供参数控制弹窗的渲染，同时弹窗关闭时能从中获取所需数据（这个在表单场景常见）
 3. 弹窗的状态与其所在组件树隔离（避免状态污染）
 
 Antd 提供的 [Modal.method()](<https://4x.ant.design/components/modal-cn/#Modal.method()>) 很好的处理了第 1 和 3 个问题，使用起来很简单，只需一行代码即可。
