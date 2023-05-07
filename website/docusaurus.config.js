@@ -87,22 +87,22 @@ const config = {
             type: "docSidebar",
             sidebarId: "showcase",
             position: "left",
-            label: "作品",
+            label: "玩具",
           },
           {
             to: '/tools',
             position: "left",
             label: "工具",
           },
-          {
-            to: '/manual',
-            position: "left",
-            label: "手册",
-          },
+          // {
+          //   to: '/manual',
+          //   position: "left",
+          //   label: "手册",
+          // },
           {
             to: "/about",
             position: "right",
-            label: "关于",
+            label: "关于我",
           },
           {
             href: "https://github.com/whinc/blog",
