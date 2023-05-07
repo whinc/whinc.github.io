@@ -6,9 +6,11 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 const editUrl = "https://github.com/whinc/whinc.github.io/tree/master/website";
 
+const name = "whincwu(右耳朵猫)"
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "whincwu(右耳朵猫)",
+  title: name,
   tagline: "分享技术，帮助别人，提高自己",
   url: "https://whinc.github.io",
   baseUrl: "/",
@@ -70,7 +72,7 @@ const config = {
       },
       metadata: [{ name: 'keywords', contentt: 'whinc, whincwu, 右耳朵猫' }],
       navbar: {
-        title: "whincwu(右耳朵猫)",
+        title: name,
         logo: {
           alt: "Logo",
           src: "img/logo.png",
@@ -159,7 +161,7 @@ const config = {
         //     ],
         //   },
         // ],
-        copyright: `Copyright © ${new Date().getFullYear()} <a href="https://github.com/whinc" target="_blank">右耳朵猫(whinc)</a>
+        copyright: `Copyright © ${new Date().getFullYear()} <a href="https://github.com/whinc" target="_blank">${name}</a>
           <br/>站点使用 <a href='https://docusaurus.io/' target="_blank">Docusaurus</a> 构建`,
       },
       prism: {
