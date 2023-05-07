@@ -70,7 +70,7 @@ const config = {
       },
       metadata: [{ name: 'keywords', contentt: 'whinc, whincwu, 右耳朵猫' }],
       navbar: {
-        title: "右耳朵猫(whinc)",
+        title: "whincwu(右耳朵猫)",
         logo: {
           alt: "Logo",
           src: "img/logo.png",

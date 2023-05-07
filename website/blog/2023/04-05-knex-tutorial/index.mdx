@@ -19,8 +19,8 @@ import preamble from '!!raw-loader!./preamble'
 <RunKitEmbed 
 evaluateOnLoad
 source={`
-${preamble}
-p(db.table('aa').select('b', 'c'))
+${preamble}\n
+knex.select('*').from('users').limit(10).toSQL();
 `} />
 
 <!--truncate-->
@@ -270,9 +270,18 @@ knex.js的 Schema Builder 功能非常强大和灵活，使用它可以轻松构
 1. 创建表格：使用`createTable`方法可以创建新的数据库表格。
 ```js
 knex.schema.createTable('users', (table) => {
+  // 自增主键
   table.increments('id');
-  table.string('name');
-  table.string('email');
+  table.string('name')
+    .index()
+    .unique()
+    .notNullable()
+    .defaultTo('');
+  table.tinyint('age');
+  // 插入时添加默认值
+  table.datetime('create_time', { precision: 6 })
+    .notNullable()
+    .defaultTo(knex.fn.now(6))
 })
 ```
 
@@ -289,55 +298,15 @@ knex.schema.alterTable('users', (table) => {
 knex.schema.dropTable('users')
 ```
 
-4. 添加列：使用`string/integer/date/...`等类型方法，可以向现有的数据库表格添加新列。
+4. 添加或修改列：创建表格后通过`table`方法可以对表的列进行调整
 ```javascript
 knex.schema.table('users', (table) => {
   table.string('password');
 })
 ```
 
-5. 修改列
-```javascript
-knex.schema.table('users', (table) => {
-  table.string('password').notNullable().defaultTo('');
-})
-```
-
-6. 添加索引：使用`index`方法可以向现有的数据库表格添加索引。
-```javascript
-knex.schema.table('users', (table) => {
-  table.index('email');
-})
-```
-
-7. 添加外键：使用`foreign`方法可以向现有的数据库表格添加外键。
-```javascript
-knex.schema.table('orders', (table) => {
-  table.integer('user_id').unsigned().references('id').inTable('users');
-})
-```
-
-8. 修改外键：使用`dropForeign`和`foreign`方法可以修改现有的数据库表格外键。
-```javascript
-knex.schema.table('orders', (table) => {
-  table.dropForeign('user_id');
-  table.integer('customer_id').unsigned().references('id').inTable('customers');
-})
-```
-
-9. 添加唯一约束：使用`unique`方法可以向现有的数据库表格添加唯一约束。
-```javascript
-knex.schema.table('users', (table) => {
-  table.unique('email');
-})
-```
-
 除了上述场景外，通过`raw`方法还可以实现数据库原生的一些模式，如MySQL中的视图、存储过程、触发器、序列等功能。
 
-10. 创建视图：使用`raw`方法可以创建新的数据库视图。
-```js
-knex.raw('CREATE VIEW active_users AS SELECT * FROM users WHERE active = 1')
-```
 
 ## Migrations 库迁移
 
