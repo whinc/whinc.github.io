@@ -14,13 +14,14 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 18.x
-          cache: npm
-          cache-dependency-path: ./website/package-lock.json
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
       - name: Build website
         working-directory: website
         run: |
-          npm ci
-          npm run build
+          pnpm install
+          pnpm run build
       # Popular action to deploy to GitHub Pages:
       # Docs: https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-docusaurus
       - name: Deploy to GitHub Pages
