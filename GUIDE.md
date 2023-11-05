@@ -14,7 +14,7 @@ npm start
 
 ## 发布
 
-代码合并到`master`分支，然后执行下面发布脚本
+代码合并到`master`分支，然后执行下面发布脚本触发 github ci 构建
 
 ```bash
 sh release.sh
