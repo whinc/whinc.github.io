@@ -4,8 +4,8 @@
 
 ![傻大妈计算器小程序码](qrcode.jpg)
 
-import img1 from "./IMG_4135.PNG";
-import img2 from "./IMG_4134.PNG";
+import img2 from "./IMG_4135.PNG";
+import img1 from "./IMG_4134.PNG";
 
 <img src={img1} alt="Example banner" width="400px" />;
 
