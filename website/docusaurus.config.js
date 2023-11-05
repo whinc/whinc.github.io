@@ -6,7 +6,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 const editUrl = "https://github.com/whinc/whinc.github.io/tree/master/website";
 
-const name = "whincwu(右耳朵猫)"
+const name = "whincwu(右耳朵猫)";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -23,7 +23,7 @@ const config = {
   markdown: {
     mermaid: true,
   },
-  themes: ['@docusaurus/theme-mermaid'],
+  themes: ["@docusaurus/theme-mermaid"],
 
   presets: [
     [
@@ -43,7 +43,7 @@ const config = {
           postsPerPage: "ALL",
           editUrl,
           feedOptions: {
-            type: 'all',
+            type: "all",
             copyright: `Copyright © ${new Date().getFullYear()} whincwu(右耳朵猫)`,
             createFeedItems: async (params) => {
               const { blogPosts, defaultCreateFeedItems, ...rest } = params;
@@ -67,10 +67,10 @@ const config = {
     ({
       docs: {
         sidebar: {
-          hideable: true
-        }
+          hideable: true,
+        },
       },
-      metadata: [{ name: 'keywords', contentt: 'whinc, whincwu, 右耳朵猫' }],
+      metadata: [{ name: "keywords", contentt: "whinc, whincwu, 右耳朵猫" }],
       navbar: {
         title: name,
         logo: {
@@ -89,10 +89,10 @@ const config = {
             type: "docSidebar",
             sidebarId: "showcase",
             position: "left",
-            label: "玩具",
+            label: "作品",
           },
           {
-            to: '/tools',
+            to: "/tools",
             position: "left",
             label: "工具",
           },

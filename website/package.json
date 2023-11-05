@@ -17,6 +17,7 @@
     "@ant-design/icons": "^5.0.1",
     "@docusaurus/core": "2.4.0",
     "@docusaurus/preset-classic": "2.4.0",
+    "@docusaurus/theme-common": "^2.4.0",
     "@docusaurus/theme-mermaid": "2.4.0",
     "@ebay/nice-modal-react": "^1.2.8",
     "@giscus/react": "^2.2.8",
