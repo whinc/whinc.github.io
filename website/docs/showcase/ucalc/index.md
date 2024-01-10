@@ -1,12 +1,15 @@
-# 傻大妈计算器 - 小程序
+# 小而美工具
 
-一款类似 iphone iOS 自带的计算器的微信小程序，但是进行了增强，支持括号运算、算数表达式、历史记录。
+一款基于 Taro 开发的微信小程序，包含日常生活实用的小工具。
 
-![傻大妈计算器小程序码](qrcode.jpg)
+![微信搜一搜：小而美工具](qrcode_soso.png)
 
-import img2 from "./IMG_4135.PNG";
-import img1 from "./IMG_4134.PNG";
+一些界面截图
 
-<img src={img1} alt="Example banner" width="400px" />;
+![科学计算器](screenshot1.png)
 
-<img src={img2} alt="Example banner" width="400px" />;
+![成人肥胖评估](screenshot2.png)
+
+![儿童生长评估](screenshot3.png)
+
+![亲戚称呼](screenshot4.png)
