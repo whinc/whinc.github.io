@@ -89,7 +89,7 @@ const config = {
             type: "docSidebar",
             sidebarId: "showcase",
             position: "left",
-            label: "作品",
+            label: "个人项目",
           },
           {
             to: "/tools",

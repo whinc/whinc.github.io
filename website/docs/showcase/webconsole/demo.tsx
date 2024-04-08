@@ -21,6 +21,6 @@ export default function Demo() {
   return s1 === "loading" || s2 === "loading"
     ? "Demo 加载中..."
     : s1 === "ready" && s2 === "ready"
-    ? "Demo 加载完毕，请看页面右下角！"
+    ? ""
     : "Demo 加载失败";
 }
