@@ -1,6 +1,6 @@
 ## whinc 的博客
 
-订阅请点 watch, 收藏请点 star，关注公众号【[右耳朵猫(whinc)](#公众号)】 获取最新文章。
+订阅请点 watch, 收藏请点 star, 阅读请访问 <https://whinc.github.io/blog>
 
 # 2020-11
 
