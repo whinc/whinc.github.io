@@ -10,11 +10,3 @@
 - 官网（国内）：https://xiaohui_hubei.gitee.io/ucalc-website/
 
 ![微信搜一搜：小而美工具](qrcode_soso.png)
-
-部分页面截图
-
-![万年历](https://xiaohui_hubei.gitee.io/ucalc-website/assets/screenshots/calendar.PNG)
-
-![亲戚称呼](https://xiaohui_hubei.gitee.io/ucalc-website/assets/screenshots/relationship.PNG)
-
-![儿童生长评估](https://xiaohui_hubei.gitee.io/ucalc-website/assets/screenshots/bmi_child.PNG)
